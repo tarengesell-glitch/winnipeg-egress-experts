@@ -3,11 +3,38 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Winnipeg Storage Specialists: Storage Restored For How You Live</title>
-<meta name="description" content="Winnipeg's end-to-end storage transformation specialists. Designers, engineers, permits, framing, mechanical, drywall, lighting, flooring, and bespoke millwork, handled by one firm so your home's storage finally matches the way you actually live." />
+<title>Winnipeg Egress Experts — Elevated Craft Through Structure</title>
+<meta name="description" content="Winnipeg's premier full-service egress window installer. Engineering, permits, city inspections, installation, and complete wall finishing — handled end-to-end. Done once, done right." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!--
+  ============================================================
+  IMAGE SYSTEM — HOW TO DROP IN YOUR REAL PHOTOS
+  ============================================================
+  Every photo on this page is a styled "slot" that already
+  looks intentional empty, and is wired for a real <img>.
+
+  TO ADD A PHOTO inside any .photo-slot, just add an <img>
+  with class "photo-img" as the FIRST child of the slot:
+
+      <div class="photo-slot" ...>
+        <img class="photo-img" src="images/your-photo.jpg" alt="...">
+        <span class="photo-slot-tag">PHOTO: ...</span>
+      </div>
+
+  The <img> will fill the slot (object-fit: cover) and sit
+  under the label. Delete the <span class="photo-slot-tag">
+  once you've added the real photo.
+
+  FOR THE HERO BACKGROUND, add an inline style to the
+  <section class="hero"> tag:
+
+      style="--hero-photo: url('images/hero.jpg');"
+  ============================================================
+-->
+
 <style>
   :root {
     --navy: #1A3045;
@@ -18,23 +45,19 @@
     --gold-deep: #B89865;
     --cream: #F2F0E6;
     --cream-light: #F8F5EB;
-    --paper: #FBFAF4;
     --taupe: #C5B4A1;
-    --taupe-line: rgba(197, 180, 161, 0.35);
-    --hairline: rgba(26, 48, 69, 0.10);
-    --hairline-strong: rgba(26, 48, 69, 0.20);
-    --gold-line: rgba(212, 181, 127, 0.55);
+    --taupe-light: #D9CDBA;
     --white: #ffffff;
-    --shadow-sm: 0 4px 14px rgba(26, 48, 69, 0.06);
-    --shadow: 0 14px 36px rgba(26, 48, 69, 0.09);
-    --shadow-lg: 0 28px 70px rgba(26, 48, 69, 0.14);
+    --shadow-sm: 0 4px 14px rgba(26, 48, 69, 0.08);
+    --shadow: 0 12px 36px rgba(26, 48, 69, 0.12);
+    --shadow-lg: 0 24px 60px rgba(26, 48, 69, 0.18);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Inter', sans-serif;
     color: var(--charcoal);
-    background: var(--paper);
+    background: var(--cream);
     line-height: 1.7;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
@@ -46,490 +69,372 @@
     line-height: 1.15;
     letter-spacing: -0.01em;
   }
-  h1 { font-size: clamp(2.4rem, 5.5vw, 4.4rem); font-weight: 700; }
+  h1 { font-size: clamp(2.4rem, 5.5vw, 4.2rem); font-weight: 800; }
   h2 { font-size: clamp(2rem, 3.8vw, 3rem); }
   h3 { font-size: 1.35rem; }
   .container { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
 
-  /* === ORNAMENTAL DIVIDERS === */
-  .ornament {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    margin: 18px 0;
-  }
+  /* === DECORATIVE DIVIDER === */
+  .ornament { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 18px 0; }
   .ornament-line { width: 60px; height: 1px; background: var(--gold); }
   .ornament-line.long { width: 100px; }
   .ornament-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
   .ornament.left { justify-content: flex-start; }
 
+  /* === PHOTO SLOT SYSTEM === */
+  .photo-slot {
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(135deg, var(--navy) 0%, var(--charcoal) 55%, var(--gold-deep) 150%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    border: 1px solid rgba(212, 181, 127, 0.3);
+    min-height: 200px;
+  }
+  .photo-slot::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(242,240,230,0.03) 0 2px, transparent 2px 22px);
+    pointer-events: none;
+  }
+  .photo-slot-tag {
+    position: relative;
+    z-index: 3;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--cream);
+    background: rgba(15, 31, 48, 0.6);
+    border: 1px solid rgba(212, 181, 127, 0.45);
+    padding: 8px 12px;
+    margin: 16px;
+    max-width: 80%;
+    line-height: 1.4;
+  }
+  .photo-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 1;
+  }
+
   /* === HEADER === */
   header {
     position: sticky;
     top: 0;
-    background: rgba(251, 250, 244, 0.94);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--hairline);
+    background: rgba(242, 240, 230, 0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 181, 127, 0.25);
     z-index: 100;
   }
-  .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 28px;
-    max-width: 1240px;
-    margin: 0 auto;
-  }
-  .logo {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: var(--navy);
-    line-height: 1;
-  }
-  .logo-name {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 1.4rem;
-    letter-spacing: 0.06em;
-    color: var(--navy);
-    text-transform: uppercase;
-  }
-  .logo-sub {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.62rem;
-    color: var(--gold-deep);
-    letter-spacing: 0.34em;
-    margin-top: 6px;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 28px; max-width: 1240px; margin: 0 auto; }
+  .logo { display: flex; flex-direction: column; text-decoration: none; color: var(--navy); line-height: 1; }
+  .logo-name { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.4rem; letter-spacing: 0.04em; color: var(--navy); }
+  .logo-sub { font-family: 'Inter', sans-serif; font-size: 0.62rem; color: var(--gold-deep); letter-spacing: 0.32em; margin-top: 4px; font-weight: 600; }
   nav ul { display: flex; gap: 36px; list-style: none; align-items: center; }
-  nav a {
-    color: var(--navy);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.84rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
+  nav a { color: var(--navy); text-decoration: none; font-weight: 500; font-size: 0.88rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; position: relative; }
   nav a:hover { color: var(--gold-deep); }
 
-  /* === BUTTONS === */
-  .btn {
-    display: inline-block;
-    padding: 14px 30px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.78rem;
-    transition: all 0.3s ease;
+  /* === MOBILE NAV === */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
     border: none;
     cursor: pointer;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    font-family: 'Inter', sans-serif;
+    padding: 6px;
+    z-index: 210;
   }
-  .btn-primary { background: var(--navy); color: var(--paper); border: 1px solid var(--navy); }
-  .btn-primary:hover { background: transparent; color: var(--navy); }
-  .btn-outline { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
-  .btn-outline:hover { background: var(--navy); color: var(--paper); }
-  .btn-gold { background: var(--gold); color: var(--navy); border: 1px solid var(--gold); }
-  .btn-gold:hover { background: var(--navy-deep); color: var(--gold); border-color: var(--gold); }
-  .btn-cream { background: var(--paper); color: var(--navy); border: 1px solid var(--paper); }
-  .btn-cream:hover { background: transparent; color: var(--paper); border-color: var(--paper); }
-  /* Light outline button for dark hero bg */
-  .btn-outline-light { background: transparent; color: var(--paper); border: 1px solid rgba(251,250,244,0.6); }
-  .btn-outline-light:hover { background: rgba(251,250,244,0.12); border-color: var(--paper); }
+  .nav-toggle span { display: block; width: 26px; height: 2px; background: var(--navy); transition: all 0.3s ease; }
+  body.menu-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  body.menu-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  body.menu-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-nav {
+    position: fixed;
+    inset: 0;
+    background: var(--navy);
+    color: var(--cream);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    z-index: 200;
+  }
+  body.menu-open .mobile-nav { transform: translateX(0); }
+  .mobile-nav a {
+    color: var(--cream);
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    padding: 12px 0;
+    letter-spacing: 0.02em;
+  }
+  .mobile-nav a:hover { color: var(--gold); }
+  .mobile-nav .btn { margin-top: 18px; font-family: 'Inter', sans-serif; font-size: 0.82rem; }
 
-  /* === HERO — Photo background with dark overlay === */
-  .hero {
-    position: relative;
-    background: url('hero-mudroom.png') center center / cover no-repeat;
-    color: var(--paper);
-    padding: 110px 0 130px;
-    overflow: hidden;
-  }
-  /* Dark overlay for readability */
+  /* === BUTTONS === */
+  .btn { display: inline-block; padding: 14px 30px; text-decoration: none; font-weight: 600; font-size: 0.82rem; transition: all 0.3s ease; border: none; cursor: pointer; letter-spacing: 0.16em; text-transform: uppercase; font-family: 'Inter', sans-serif; }
+  .btn-primary { background: var(--navy); color: var(--cream); border: 1px solid var(--navy); }
+  .btn-primary:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+  .btn-gold { background: var(--gold); color: var(--navy); border: 1px solid var(--gold); }
+  .btn-gold:hover { background: var(--navy); color: var(--cream); }
+  .btn-outline { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
+  .btn-outline:hover { background: var(--navy); color: var(--cream); }
+  .btn-outline-cream { background: transparent; color: var(--cream); border: 1px solid var(--cream); }
+  .btn-outline-cream:hover { background: var(--cream); color: var(--navy); }
+
+  /* === HERO === */
+  /* Hero photo background — references header-image.jpg from the GitLab repo */
+  .hero { position: relative; background: url('header-image.jpg') center center / cover no-repeat; background-color: var(--navy); color: var(--cream); padding: 120px 0 140px; overflow: hidden; }
+  /* Dark overlay so the photo sits softly (slightly opaque) behind the text */
   .hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(10, 20, 32, 0.65);
+    background: linear-gradient(100deg, rgba(15, 31, 48, 0.82) 0%, rgba(15, 31, 48, 0.60) 55%, rgba(26, 48, 69, 0.46) 100%);
     pointer-events: none;
     z-index: 0;
   }
-  /* Subtle gold warmth at bottom */
-  .hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 50% 110%, rgba(212, 181, 127, 0.12) 0%, transparent 55%);
-    pointer-events: none;
-    z-index: 0;
-  }
-  .hero > * { position: relative; z-index: 1; }
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1.25fr 1fr;
-    gap: 70px;
-    align-items: center;
-  }
-  .hero-eyebrow {
-    color: var(--gold-bright);
-    font-size: 0.74rem;
-    letter-spacing: 0.38em;
-    text-transform: uppercase;
-    margin-bottom: 26px;
-    font-weight: 600;
-  }
-  .hero h1 { color: var(--paper); margin-bottom: 28px; font-weight: 700; }
-  .hero h1 em { font-style: italic; color: var(--gold-bright); font-weight: 500; }
-  .hero p.lead {
-    font-size: 1.1rem;
-    margin-bottom: 38px;
-    color: rgba(251, 250, 244, 0.88);
-    max-width: 580px;
-    line-height: 1.8;
-  }
-  /* Gold divider inside hero */
-  .hero-ornament {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 28px;
-  }
-  .hero-ornament-line { width: 48px; height: 1px; background: var(--gold); }
-  .hero-ornament-diamond { width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
+  .hero > * { position: relative; z-index: 2; }
+  .hero-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 70px; align-items: center; }
+  .hero-eyebrow { color: var(--gold); font-size: 0.78rem; letter-spacing: 0.36em; text-transform: uppercase; margin-bottom: 24px; font-weight: 600; }
+  .hero h1 { color: var(--cream); margin-bottom: 26px; font-weight: 700; }
+  .hero h1 em { font-style: italic; color: var(--gold); font-weight: 500; }
+  .hero p.lead { font-size: 1.12rem; margin-bottom: 36px; color: rgba(242, 240, 230, 0.88); max-width: 540px; line-height: 1.75; }
   .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
-
-  /* Hero card — navy panel on dark photo bg */
-  .hero-card {
-    background: rgba(15, 31, 48, 0.88);
-    backdrop-filter: blur(8px);
-    color: var(--paper);
-    padding: 42px;
-    box-shadow: var(--shadow-lg);
-    position: relative;
-    border: 1px solid rgba(212, 181, 127, 0.3);
-  }
-  .hero-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: var(--gold);
-  }
-  .hero-card-eyebrow {
-    color: var(--gold);
-    font-size: 0.72rem;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  .hero-card h3 { margin-bottom: 8px; font-size: 1.55rem; color: var(--paper); }
-  .hero-card p.muted { color: rgba(251, 250, 244, 0.72); margin-bottom: 26px; font-size: 0.92rem; }
-  .hero-card .cal-trigger-block { display: flex; flex-direction: column; gap: 12px; }
-  .hero-card .cal-trigger-block p {
-    color: rgba(251, 250, 244, 0.65);
-    font-size: 0.82rem;
-    line-height: 1.6;
-    margin: 0;
-  }
+  .hero-card { background: var(--cream); color: var(--charcoal); padding: 40px; box-shadow: var(--shadow-lg); position: relative; }
+  .hero-card::before { content: ''; position: absolute; top: -1px; left: -1px; right: -1px; bottom: -1px; border: 1px solid var(--gold); pointer-events: none; transform: translate(8px, 8px); z-index: -1; }
+  .hero-card-eyebrow { color: var(--gold-deep); font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+  .hero-card h3 { margin-bottom: 8px; font-size: 1.6rem; }
+  .hero-card p.muted { color: var(--charcoal); margin-bottom: 24px; font-size: 0.92rem; opacity: 0.75; }
+  .hero-card form { display: flex; flex-direction: column; gap: 12px; }
+  .hero-card input { padding: 14px 16px; border: 1px solid var(--taupe); background: var(--white); font-size: 0.95rem; font-family: inherit; color: var(--charcoal); border-radius: 0; }
+  .hero-card input:focus { outline: none; border-color: var(--gold); }
   .hero-card button { width: 100%; margin-top: 6px; }
-
-  /* === TRUST STRIP === */
-  .trust-strip {
-    background: var(--navy);
-    padding: 28px 0;
-    border-top: 3px solid var(--gold);
-  }
-  .trust-strip-inner {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 28px;
-    text-align: center;
-    color: var(--paper);
-    font-size: 0.74rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.24em;
-  }
-  .trust-item { display: flex; align-items: center; gap: 12px; }
-  .trust-item-mark { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); }
 
   /* === SECTIONS === */
   section { padding: 110px 0; }
-  .section-paper { background: var(--paper); }
   .section-cream { background: var(--cream); }
   .section-light { background: var(--cream-light); }
-  .section-navy { background: var(--navy); color: var(--paper); }
-  .section-navy h2, .section-navy h3, .section-navy h4 { color: var(--paper); }
-
+  .section-navy { background: var(--navy); color: var(--cream); }
+  .section-navy h2, .section-navy h3 { color: var(--cream); }
   .section-header { text-align: center; max-width: 760px; margin: 0 auto 70px; }
-  .eyebrow {
-    color: var(--gold-deep);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.34em;
-    font-size: 0.74rem;
-    margin-bottom: 18px;
-    display: block;
-  }
+  .eyebrow { color: var(--gold-deep); font-weight: 600; text-transform: uppercase; letter-spacing: 0.32em; font-size: 0.78rem; margin-bottom: 18px; display: block; }
   .section-navy .eyebrow { color: var(--gold); }
-  .section-header p { color: var(--charcoal); font-size: 1.06rem; margin-top: 24px; line-height: 1.8; }
-  .section-navy .section-header p { color: rgba(251, 250, 244, 0.78); }
+  .section-header p { color: var(--charcoal); font-size: 1.08rem; margin-top: 22px; line-height: 1.75; }
+  .section-navy .section-header p { color: rgba(242, 240, 230, 0.78); }
+
+  /* === OUTCOMES GRID (replaces trust strip) === */
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 230px;
+    gap: 18px;
+  }
+  .outcome-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(212, 181, 127, 0.3);
+  }
+  .outcome-card.tall { grid-row: span 2; }
+  .outcome-card.wide { grid-column: span 2; }
+  .outcome-card .photo-slot { position: absolute; inset: 0; border: none; min-height: 0; }
+  .outcome-caption {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 26px;
+    background: linear-gradient(to top, rgba(15, 31, 48, 0.85) 0%, rgba(15, 31, 48, 0.15) 55%, transparent 100%);
+    pointer-events: none;
+  }
+  .outcome-caption .oc-tag { color: var(--gold); font-size: 0.68rem; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+  .outcome-caption h3 { color: var(--cream); font-size: 1.45rem; margin-bottom: 6px; }
+  .outcome-caption p { color: rgba(242, 240, 230, 0.85); font-size: 0.92rem; line-height: 1.55; }
+  /* keep the photo-slot label out of the way inside outcome cards */
+  .outcome-card .photo-slot-tag { z-index: 2; opacity: 0.85; }
 
   /* === BENEFITS === */
-  .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 28px; }
-  .benefit-card {
-    background: var(--paper);
-    padding: 44px 38px;
-    border: 1px solid var(--hairline);
-    transition: all 0.3s;
-    position: relative;
-  }
+  .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 28px; }
+  .benefit-card { background: var(--cream-light); padding: 40px 36px; border: 1px solid rgba(212, 181, 127, 0.3); transition: all 0.3s; position: relative; }
   .benefit-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: var(--shadow); }
-  .benefit-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: var(--gold-deep);
-    font-style: italic;
-    font-weight: 500;
-    line-height: 1;
-    margin-bottom: 20px;
-  }
-  .benefit-card h3 { margin-bottom: 14px; font-size: 1.28rem; }
-  .benefit-card p { color: var(--charcoal); font-size: 0.97rem; opacity: 0.88; line-height: 1.75; }
+  .benefit-card.feature { background: var(--navy); border-color: var(--gold); }
+  .benefit-card.feature h3 { color: var(--cream); }
+  .benefit-card.feature p { color: rgba(242, 240, 230, 0.82); }
+  .benefit-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--gold); font-style: italic; font-weight: 500; line-height: 1; margin-bottom: 18px; }
+  .benefit-card h3 { margin-bottom: 12px; font-size: 1.3rem; }
+  .benefit-card p { color: var(--charcoal); font-size: 0.97rem; opacity: 0.85; }
+  .benefit-card.feature p { opacity: 1; }
 
-  /* === COMPARISON TABLE === */
-  :root {
-    --check-green: #2D7A4A;
-    --check-green-deep: #20603A;
-    --check-bg: rgba(45, 122, 74, 0.07);
-    --x-red: #B85047;
-    --x-bg: rgba(184, 80, 71, 0.045);
-  }
-  .compare-wrap { border: 1px solid var(--hairline); background: var(--paper); overflow: hidden; }
-  .compare-table { width: 100%; border-collapse: collapse; font-size: 0.96rem; color: var(--charcoal); }
-  .compare-table thead th {
-    text-align: center;
-    padding: 32px 22px 26px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    background: var(--paper);
-    border-bottom: 1px solid var(--hairline-strong);
-    vertical-align: top;
-  }
-  .compare-table thead th.col-feature { text-align: left; padding-left: 32px; background: var(--cream-light); }
-  .compare-table thead th.col-them2 { background: var(--cream-light); }
-  .compare-table thead th.col-us { background: var(--navy); color: var(--cream); position: relative; }
-  .compare-table thead th.col-us::before {
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--gold);
-  }
-  .col-eyebrow { display: block; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; color: var(--charcoal); opacity: 0.55; margin-bottom: 10px; }
-  .compare-table thead th.col-us .col-eyebrow { color: var(--gold-bright); opacity: 1; }
-  .col-name { display: block; font-family: 'Playfair Display', Georgia, serif; font-size: 1.18rem; font-weight: 700; color: var(--navy); line-height: 1.25; margin-bottom: 6px; }
-  .compare-table thead th.col-us .col-name { color: var(--cream); }
-  .col-sub { display: block; font-size: 0.78rem; font-weight: 400; color: var(--charcoal); opacity: 0.65; line-height: 1.45; }
-  .compare-table thead th.col-us .col-sub { color: var(--gold-bright); opacity: 0.85; }
-  .compare-table tbody td { padding: 18px 22px; border-top: 1px solid var(--hairline); text-align: center; vertical-align: middle; }
-  .compare-table tbody td.feature { text-align: left; padding-left: 32px; font-weight: 500; color: var(--navy); background: var(--cream-light); width: 36%; }
-  .compare-table tbody td.them { background: var(--x-bg); }
-  .compare-table tbody td.them2 { background: var(--x-bg); }
-  .compare-table tbody td.us { background: var(--check-bg); position: relative; }
-  .compare-table tbody tr:hover td.us { background: rgba(45, 122, 74, 0.11); }
-  .compare-table tbody tr:last-child td { border-bottom: 1px solid var(--hairline); }
-  .mark { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; font-weight: 700; font-size: 1rem; line-height: 1; }
-  .mark.no { background: rgba(184, 80, 71, 0.14); color: var(--x-red); border: 1.5px solid rgba(184, 80, 71, 0.32); }
-  .mark.yes { background: var(--check-green); color: #fff; border: 1.5px solid var(--check-green-deep); box-shadow: 0 2px 6px rgba(45, 122, 74, 0.25); }
-  .compare-footnote { background: var(--navy); color: var(--cream); padding: 26px 32px; text-align: center; font-size: 0.95rem; line-height: 1.7; border-top: 4px solid var(--gold); }
-  .compare-footnote strong { color: var(--gold-bright); font-weight: 600; }
-  @media (max-width: 820px) {
-    .compare-table { font-size: 0.85rem; }
-    .compare-table tbody td.feature { padding-left: 14px; }
-    .compare-table thead th { padding: 18px 8px; }
-    .compare-table tbody td { padding: 14px 8px; }
-    .col-name { font-size: 0.98rem; }
-    .col-sub { font-size: 0.7rem; }
-    .mark { width: 24px; height: 24px; }
-  }
+  /* === PRICE TRANSPARENCY === */
+  .price-hero { text-align: center; margin-bottom: 54px; }
+  .price-tag { display: inline-flex; align-items: baseline; gap: 14px; padding: 28px 50px; background: var(--cream); border: 1px solid var(--gold); margin: 28px 0 16px; position: relative; }
+  .price-tag::before, .price-tag::after { content: ''; position: absolute; width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); top: 50%; margin-top: -4px; }
+  .price-tag::before { left: -4px; }
+  .price-tag::after { right: -4px; }
+  .price-amount { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; color: var(--navy); letter-spacing: -0.02em; }
+  .price-unit { font-size: 1rem; color: var(--charcoal); opacity: 0.7; letter-spacing: 0.04em; }
+  .price-note { color: var(--charcoal); opacity: 0.75; font-size: 0.95rem; max-width: 620px; margin: 0 auto; }
 
-  /* === SCOPE STRIP === */
-  .scope-strip { background: var(--navy); color: var(--cream); padding: 56px 0; position: relative; }
-  .scope-strip::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--gold); }
-  .scope-header { text-align: center; margin-bottom: 38px; }
-  .scope-header .eyebrow { color: var(--gold-bright); margin-bottom: 14px; }
-  .scope-header h2 { color: var(--cream); font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 8px; }
-  .scope-header h2 em { color: var(--gold-bright); font-style: normal; }
-  .scope-header p { color: var(--cream); opacity: 0.78; max-width: 720px; margin: 14px auto 0; font-size: 1rem; }
-  .scope-chain { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 14px; max-width: 1080px; margin: 0 auto; }
-  .scope-chip {
-    display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px;
-    background: rgba(255,255,255,0.04); border: 1px solid rgba(212, 181, 127, 0.28);
-    border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 0.86rem; font-weight: 500; color: var(--cream); letter-spacing: 0.02em;
-  }
-  .scope-chip-num { font-family: 'Playfair Display', Georgia, serif; font-size: 0.78rem; font-weight: 700; color: var(--gold-bright); letter-spacing: 0.18em; }
-  .scope-chip:hover { background: rgba(212, 181, 127, 0.10); border-color: var(--gold); }
-  .scope-tagline { text-align: center; margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(212, 181, 127, 0.22); font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 1.15rem; color: var(--gold-bright); letter-spacing: 0.01em; }
+  /* === PRICING SPLIT IMAGE === */
+  .price-split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 920px; margin: 0 auto 56px; }
+  .price-split .split-pane { position: relative; }
+  .price-split .photo-slot { min-height: 280px; }
+  .split-label { position: absolute; top: 0; left: 0; z-index: 5; padding: 10px 18px; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; }
+  .split-label.bad { background: #C8362A; color: var(--cream); }
+  .split-label.good { background: #2A8F47; color: var(--cream); }
 
-  /* === SPACES GRID === */
-  .spaces-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0; border: 1px solid var(--hairline); }
-  .space-card { padding: 52px 38px; background: var(--paper); border-right: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); transition: all 0.3s; position: relative; }
-  .space-card:hover { background: var(--cream-light); }
-  .space-card:hover .space-icon { color: var(--gold); }
-  .space-icon { width: 56px; height: 56px; margin-bottom: 22px; color: var(--navy); transition: color 0.3s; }
-  .space-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.2; }
-  .space-card h4 { font-size: 1.18rem; margin-bottom: 10px; color: var(--navy); }
-  .space-card p { font-size: 0.92rem; color: var(--charcoal); opacity: 0.85; line-height: 1.7; }
+  .compare-table { display: grid; grid-template-columns: 1.4fr 1fr 1fr; background: var(--cream-light); border: 1px solid rgba(212, 181, 127, 0.4); overflow: hidden; margin-top: 20px; }
+  .compare-cell { padding: 22px 26px; border-bottom: 1px solid rgba(212, 181, 127, 0.25); font-size: 0.98rem; display: flex; align-items: center; gap: 12px; }
+  .compare-row:last-child .compare-cell { border-bottom: none; }
+  .compare-head { background: var(--navy); color: var(--cream); font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1.05rem; border-bottom: none; padding: 22px 24px; flex-direction: column; align-items: flex-start; gap: 4px; line-height: 1.25; }
+  .compare-head.us { background: var(--gold); color: var(--navy); }
+  .compare-head.empty { background: transparent; border-bottom: 1px solid rgba(212, 181, 127, 0.4); }
+  .compare-head small { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.85; font-family: 'Inter', sans-serif; font-weight: 500; }
+  .compare-label { background: var(--cream); font-weight: 600; color: var(--navy); }
+  .compare-yes { color: var(--navy); font-weight: 600; }
+  .compare-yes::before { content: '✓'; color: #2A8F47; font-size: 1.35rem; font-weight: 800; line-height: 1; }
+  .compare-no { color: var(--charcoal); opacity: 0.75; }
+  .compare-no::before { content: '✕'; color: #C8362A; font-size: 1.2rem; font-weight: 800; line-height: 1; }
 
-  /* === SHOWCASE === */
+  /* === PROCESS TIMELINE (5 phases) === */
+  .timeline { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; margin-top: 64px; }
+  .timeline::before { content: ''; position: absolute; top: 26px; left: 10%; right: 10%; height: 2px; background: rgba(212, 181, 127, 0.4); z-index: 1; }
+  .phase { text-align: center; padding: 0 18px; position: relative; z-index: 2; }
+  .phase-num { width: 54px; height: 54px; border-radius: 50%; border: 2px solid var(--gold); color: var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 22px; background: var(--navy); font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.15rem; transition: all 0.3s; }
+  .phase:hover .phase-num { background: var(--gold); color: var(--navy); }
+  .phase h4 { color: var(--cream); font-size: 1.12rem; margin-bottom: 10px; }
+  .phase p { color: rgba(242, 240, 230, 0.72); font-size: 0.9rem; line-height: 1.6; }
+
+  /* === TEAM === */
+  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
+  .team-card { background: var(--cream-light); border: 1px solid rgba(212, 181, 127, 0.3); transition: all 0.3s; }
+  .team-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: var(--shadow); }
+  .team-photo { aspect-ratio: 3/4; }
+  .team-photo .photo-slot { width: 100%; height: 100%; border: none; min-height: 0; }
+  .team-body { padding: 24px 26px 30px; }
+  .team-role { color: var(--gold-deep); font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+  .team-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+  .team-card p { color: var(--charcoal); font-size: 0.92rem; opacity: 0.85; line-height: 1.65; }
+
+  /* === SHOWCASE / ABOUT === */
   .showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-  .showcase-img { aspect-ratio: 4/5; background: var(--cream); box-shadow: var(--shadow-lg); position: relative; overflow: hidden; }
+  .showcase-img { aspect-ratio: 4/5; box-shadow: var(--shadow-lg); position: relative; }
+  .showcase-img .photo-slot { width: 100%; height: 100%; min-height: 0; }
   .showcase-img::before { content: ''; position: absolute; inset: -20px; border: 1px solid var(--gold); z-index: -1; }
-  .showcase-img svg { width: 100%; height: 100%; display: block; }
   .showcase h2 { margin-bottom: 22px; }
-  .showcase p { color: var(--charcoal); margin-bottom: 18px; font-size: 1rem; line-height: 1.85; }
-  .showcase ul { list-style: none; margin: 28px 0 36px; }
-  .showcase ul li { padding: 12px 0 12px 30px; position: relative; color: var(--navy); font-weight: 500; border-bottom: 1px solid var(--hairline); }
-  .showcase ul li::before { content: '◆'; position: absolute; left: 4px; top: 14px; color: var(--gold); font-size: 0.65rem; }
+  .showcase p { color: var(--charcoal); margin-bottom: 18px; font-size: 1.02rem; line-height: 1.8; }
+  .showcase .btn { margin-top: 14px; }
 
-  /* === VALUE GRID === */
-  .value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 0; border: 1px solid var(--hairline); margin-top: 50px; background: var(--paper); }
-  .value-cell { padding: 38px 36px; border-right: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); background: var(--paper); position: relative; }
-  .value-cell::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.5s ease; }
-  .value-cell:hover::before { width: 100%; }
-  .value-num { font-family: 'Playfair Display', serif; font-style: italic; color: var(--gold-deep); font-size: 0.9rem; margin-bottom: 14px; letter-spacing: 0.06em; }
-  .value-cell h4 { font-size: 1.15rem; margin-bottom: 12px; color: var(--navy); line-height: 1.35; }
-  .value-cell p { color: var(--charcoal); font-size: 0.94rem; line-height: 1.75; opacity: 0.88; }
-  .value-quote { text-align: center; margin-top: 60px; max-width: 740px; margin-left: auto; margin-right: auto; padding: 44px 30px; border-top: 1px solid var(--gold-line); border-bottom: 1px solid var(--gold-line); }
-  .value-quote p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.3rem; line-height: 1.6; color: var(--navy); font-weight: 400; }
-  .value-quote p strong { color: var(--gold-deep); font-style: normal; font-weight: 600; }
-
-  /* === PROCESS === */
-  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; margin-top: 50px; border: 1px solid var(--hairline); }
-  .process-step { background: var(--paper); padding: 36px 30px; border-right: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); border-top: 2px solid var(--gold); transition: all 0.3s; }
-  .process-step:hover { background: var(--cream-light); border-top-color: var(--gold-bright); }
-  .process-num { font-family: 'Playfair Display', serif; font-style: italic; color: var(--gold-deep); font-size: 0.92rem; margin-bottom: 14px; letter-spacing: 0.06em; }
-  .process-step h4 { color: var(--navy); font-size: 1.15rem; margin-bottom: 12px; }
-  .process-step p { color: var(--charcoal); font-size: 0.92rem; line-height: 1.7; opacity: 0.88; }
-
-  /* === TRUST PILLS === */
-  .trust-signals { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
-  .trust-pill { display: flex; align-items: center; gap: 18px; padding: 26px 28px; background: var(--paper); border: 1px solid var(--hairline); border-left: 3px solid var(--gold); transition: all 0.3s; }
-  .trust-pill:hover { border-left-color: var(--gold-deep); transform: translateX(2px); }
-  .trust-pill-icon { color: var(--gold-deep); font-size: 1rem; flex-shrink: 0; }
-  .trust-pill strong { display: block; color: var(--navy); font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1.05rem; margin-bottom: 2px; }
-  .trust-pill span { color: var(--charcoal); font-size: 0.86rem; opacity: 0.78; }
-
-  /* === PROTOCOL === */
-  .protocol { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-  .protocol-list { list-style: none; counter-reset: protocol; }
-  .protocol-list li { counter-increment: protocol; padding: 24px 0 24px 60px; position: relative; border-bottom: 1px solid var(--hairline); }
-  .protocol-list li:last-child { border-bottom: none; }
-  .protocol-list li::before { content: counter(protocol, decimal-leading-zero); position: absolute; left: 0; top: 24px; font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; color: var(--gold-deep); font-size: 1.1rem; letter-spacing: 0.04em; }
-  .protocol-list h4 { font-size: 1.1rem; margin-bottom: 6px; color: var(--navy); }
-  .protocol-list p { color: var(--charcoal); font-size: 0.95rem; line-height: 1.7; opacity: 0.88; }
-
-  /* === STORY / GESELL BUILT === */
-  .story-section { background: var(--cream); color: var(--charcoal); padding: 130px 0; position: relative; overflow: hidden; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
-  .story-section::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(var(--hairline) 1px, transparent 1px), linear-gradient(90deg, var(--hairline) 1px, transparent 1px); background-size: 100px 100px; opacity: 0.45; pointer-events: none; }
-  .story-section > * { position: relative; }
-  .story-display { text-align: center; max-width: 1000px; margin: 0 auto 70px; }
-  .story-display .nameplate { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--navy); font-size: clamp(3rem, 9vw, 6.5rem); letter-spacing: 0.16em; line-height: 1; margin-bottom: 24px; }
-  .story-display .nameplate-sub { font-family: 'Inter', sans-serif; color: var(--gold-deep); font-size: 0.74rem; letter-spacing: 0.4em; text-transform: uppercase; font-weight: 600; margin-bottom: 38px; }
-  .story-etymology { display: inline-block; max-width: 720px; padding: 30px 36px; border-top: 1px solid var(--gold-line); border-bottom: 1px solid var(--gold-line); font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.15rem; color: var(--navy); line-height: 1.65; font-weight: 400; }
-  .story-etymology strong { color: var(--gold-deep); font-style: normal; font-weight: 600; letter-spacing: 0.04em; }
-  .story-narrative { max-width: 760px; margin: 0 auto; border-left: 1px solid var(--gold); padding: 6px 0 6px 44px; }
-  .story-narrative h2 { color: var(--navy); font-size: clamp(1.7rem, 3vw, 2.3rem); margin-bottom: 22px; }
-  .story-narrative h2 em { color: var(--gold-deep); font-style: italic; font-weight: 500; }
-  .story-narrative p { color: var(--charcoal); font-size: 1.02rem; line-height: 1.85; margin-bottom: 18px; }
-  .story-narrative p strong { color: var(--navy); font-weight: 600; }
-  .story-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 900px; margin: 70px auto 0; padding-top: 48px; border-top: 1px solid var(--hairline); }
+  /* === GESELL BUILT (condensed) === */
+  .gesell { max-width: 820px; margin: 0 auto; text-align: center; }
+  .gesell p { color: rgba(242, 240, 230, 0.85); font-size: 1.05rem; line-height: 1.85; margin-bottom: 20px; }
+  .gesell p em { color: var(--gold); font-style: italic; }
+  .gesell .group-line { font-family: 'Playfair Display', serif; font-style: italic; color: var(--cream); font-size: 1.1rem; }
+  .gesell .group-line strong { color: var(--gold); font-style: normal; font-weight: 600; letter-spacing: 0.03em; }
+  .story-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 900px; margin: 60px auto 0; padding-top: 48px; border-top: 1px solid rgba(212, 181, 127, 0.25); }
   .pillar { text-align: center; padding: 0 16px; }
-  .pillar-num { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.3rem; color: var(--gold-deep); font-weight: 500; margin-bottom: 12px; }
-  .pillar-label { font-family: 'Playfair Display', serif; color: var(--navy); font-weight: 600; font-size: 1rem; line-height: 1.5; }
-
-  /* === PROMISE === */
-  .promise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 26px; }
-  .promise-card { background: var(--paper); padding: 42px 36px 36px; border: 1px solid var(--hairline); position: relative; transition: all 0.3s; }
-  .promise-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: var(--shadow); }
-  .promise-mark { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.4rem; color: var(--gold-deep); font-weight: 500; margin-bottom: 14px; letter-spacing: 0.04em; }
-  .promise-card h3 { margin-bottom: 12px; font-size: 1.22rem; color: var(--navy); }
-  .promise-card p { color: var(--charcoal); font-size: 0.96rem; line-height: 1.78; opacity: 0.9; }
+  .pillar-num { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.35rem; color: var(--gold); font-weight: 500; margin-bottom: 10px; }
+  .pillar-label { font-family: 'Playfair Display', serif; color: var(--cream); font-weight: 600; font-size: 1rem; line-height: 1.4; }
 
   /* === FAQ === */
   .faq { max-width: 860px; margin: 0 auto; }
-  .faq-item { background: var(--paper); border: 1px solid var(--hairline); margin-bottom: 14px; overflow: hidden; transition: border-color 0.2s; }
+  .faq-item { background: var(--cream-light); border: 1px solid rgba(212, 181, 127, 0.3); margin-bottom: 14px; overflow: hidden; transition: border-color 0.2s; }
   .faq-item:hover { border-color: var(--gold); }
-  .faq-question { padding: 24px 28px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--navy); font-size: 1rem; font-family: 'Playfair Display', serif; gap: 20px; }
+  .faq-question { padding: 24px 28px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--navy); font-size: 1.02rem; font-family: 'Playfair Display', serif; gap: 18px; }
   .faq-question::after { content: '+'; font-size: 1.5rem; color: var(--gold-deep); font-family: 'Inter', sans-serif; transition: transform 0.3s; font-weight: 300; flex-shrink: 0; }
   .faq-item.open .faq-question::after { transform: rotate(45deg); }
   .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; color: var(--charcoal); }
-  .faq-item.open .faq-answer { max-height: 360px; }
-  .faq-answer-inner { padding: 0 28px 26px; line-height: 1.75; font-size: 0.95rem; }
+  .faq-item.open .faq-answer { max-height: 320px; }
+  .faq-answer-inner { padding: 0 28px 26px; line-height: 1.75; }
 
   /* === CTA BANNER === */
-  .cta-banner { background: var(--navy); color: var(--paper); text-align: center; padding: 100px 0; position: relative; overflow: hidden; }
-  .cta-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 100%, rgba(212, 181, 127, 0.10) 0%, transparent 60%); pointer-events: none; }
-  .cta-banner > * { position: relative; }
-  .cta-banner h2 { color: var(--paper); margin-bottom: 18px; }
+  .cta-banner { background: var(--navy); color: var(--cream); text-align: center; padding: 100px 0; position: relative; }
+  .cta-banner h2 { color: var(--cream); margin-bottom: 18px; }
   .cta-banner h2 em { color: var(--gold); font-style: italic; font-weight: 500; }
-  .cta-banner p { color: rgba(251, 250, 244, 0.82); font-size: 1.08rem; margin: 22px auto 36px; max-width: 600px; line-height: 1.75; }
+  .cta-banner p { color: rgba(242, 240, 230, 0.82); font-size: 1.12rem; margin: 22px auto 36px; max-width: 580px; line-height: 1.7; }
 
   /* === CONTACT === */
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
   .contact-info h2 { margin-bottom: 22px; }
-  .contact-info > p { color: var(--charcoal); margin-bottom: 36px; line-height: 1.78; }
-  .contact-detail { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--hairline); }
+  .contact-info > p { color: var(--charcoal); margin-bottom: 30px; line-height: 1.75; }
+  .contact-photo { margin-bottom: 30px; }
+  .contact-photo .photo-slot { min-height: 220px; }
+  .contact-detail { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(212, 181, 127, 0.3); }
   .contact-detail:last-child { border-bottom: none; }
   .contact-detail-icon { width: 44px; height: 44px; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; color: var(--gold-deep); font-size: 1rem; flex-shrink: 0; }
-  .contact-detail strong { display: block; color: var(--navy); margin-bottom: 4px; font-family: 'Playfair Display', serif; font-size: 1.04rem; }
+  .contact-detail strong { display: block; color: var(--navy); margin-bottom: 4px; font-family: 'Playfair Display', serif; font-size: 1.05rem; }
   .contact-detail span { color: var(--charcoal); font-size: 0.95rem; opacity: 0.85; }
+  .contact-form { background: var(--cream-light); padding: 48px; border: 1px solid rgba(212, 181, 127, 0.4); position: relative; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .contact-form input, .contact-form select, .contact-form textarea { padding: 14px 16px; border: 1px solid var(--taupe); border-radius: 0; font-size: 0.95rem; font-family: inherit; background: var(--white); width: 100%; margin-bottom: 14px; color: var(--charcoal); }
+  .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline: none; border-color: var(--gold); }
+  .contact-form textarea { min-height: 120px; resize: vertical; }
+  .contact-form button { width: 100%; margin-top: 6px; }
+  .hero-card-eyebrow { color: var(--gold-deep); font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
 
   /* === FOOTER === */
-  footer { background: var(--navy-deep); color: rgba(251, 250, 244, 0.7); padding: 80px 0 30px; }
+  footer { background: var(--navy-deep); color: rgba(242, 240, 230, 0.7); padding: 80px 0 30px; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
-  footer h4 { color: var(--gold); font-family: 'Inter', sans-serif; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 22px; font-weight: 600; }
+  footer h4 { color: var(--gold); font-family: 'Inter', sans-serif; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.28em; margin-bottom: 22px; font-weight: 600; }
   footer ul { list-style: none; }
-  footer ul li { margin-bottom: 12px; font-size: 0.92rem; }
-  footer a { color: rgba(251, 250, 244, 0.7); text-decoration: none; transition: color 0.2s; }
+  footer ul li { margin-bottom: 12px; font-size: 0.93rem; }
+  footer a { color: rgba(242, 240, 230, 0.7); text-decoration: none; transition: color 0.2s; }
   footer a:hover { color: var(--gold); }
-  .footer-tag .logo-name { color: var(--paper); font-size: 1.45rem; }
-  .footer-tag .logo-sub { color: var(--gold); }
-  .footer-tag p { font-size: 0.94rem; line-height: 1.85; margin-top: 18px; max-width: 380px; opacity: 0.78; }
-  .footer-bottom { border-top: 1px solid rgba(212, 181, 127, 0.18); padding-top: 28px; text-align: center; font-size: 0.82rem; opacity: 0.7; letter-spacing: 0.06em; }
-  .footer-group { margin-top: 10px; font-style: italic; font-family: 'Playfair Display', serif; color: var(--gold); font-size: 0.88rem; letter-spacing: 0.04em; }
-
-  /* === MOBILE NAV === */
-  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; color: var(--navy); }
-  .nav-toggle svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; }
-  .mobile-nav { display: none; position: fixed; inset: 0; background: var(--navy); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
-  .mobile-nav.open { display: flex; }
-  .mobile-nav a { color: var(--paper); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; letter-spacing: 0.04em; transition: color 0.2s; }
-  .mobile-nav a:hover { color: var(--gold); }
-  .mobile-nav-close { position: absolute; top: 24px; right: 28px; background: none; border: none; cursor: pointer; color: var(--gold); font-size: 2rem; line-height: 1; }
+  .footer-tag .logo-name { color: var(--cream); font-size: 1.6rem; }
+  .footer-tag p { font-size: 0.95rem; line-height: 1.8; margin-top: 18px; max-width: 380px; opacity: 0.75; }
+  .footer-bottom { border-top: 1px solid rgba(212, 181, 127, 0.18); padding-top: 28px; text-align: center; font-size: 0.82rem; opacity: 0.7; letter-spacing: 0.04em; }
 
   /* === RESPONSIVE === */
   @media (max-width: 960px) {
-    .hero-grid, .showcase, .contact-grid, .protocol { grid-template-columns: 1fr; gap: 50px; }
+    .hero-grid, .showcase, .contact-grid { grid-template-columns: 1fr; gap: 50px; }
     .story-pillars { grid-template-columns: 1fr; gap: 18px; }
-    .story-narrative { padding-left: 24px; }
-    .story-section { padding: 80px 0; }
     section { padding: 70px 0; }
     nav ul { display: none; }
-    .nav-toggle { display: block; }
+    .nav-toggle { display: flex; }
     .form-row { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
-    .hero { padding: 70px 0 90px; }
+    .compare-table { grid-template-columns: 1fr; }
+    .compare-table .compare-row { display: contents; }
+    .compare-head { display: flex; }
+    .compare-cell { padding: 14px 22px; }
+    .hero { padding: 80px 0 100px; }
+    /* outcomes -> simple stack */
+    .outcomes-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 220px; }
+    .outcome-card.tall { grid-row: span 1; }
+    .outcome-card.wide { grid-column: span 2; }
+    /* timeline -> vertical */
+    .timeline { grid-template-columns: 1fr; gap: 30px; }
+    .timeline::before { top: 0; bottom: 0; left: 26px; right: auto; width: 2px; height: auto; }
+    .phase { text-align: left; display: grid; grid-template-columns: 54px 1fr; gap: 22px; align-items: start; padding: 0; }
+    .phase-num { margin: 0; }
+    /* team -> 2 cols */
+    .team-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 540px) {
     .footer-grid { grid-template-columns: 1fr; }
-    h1 { font-size: 2.1rem; }
-    .space-card, .value-cell { padding: 34px 26px; }
+    h1 { font-size: 2.2rem; }
+    .price-amount { font-size: 2.4rem; }
+    .price-tag { padding: 22px 32px; }
+    .outcomes-grid { grid-template-columns: 1fr; }
+    .outcome-card.wide { grid-column: span 1; }
+    .team-grid { grid-template-columns: 1fr; }
+    .price-split { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -539,12 +444,10 @@
 <script type="text/javascript">
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 Cal("init", "30min", {origin:"https://app.cal.com"});
-  Cal.ns["30min"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#0f1f30"},"dark":{"cal-brand":"#F8F5EB"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  Cal.ns["30min"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#1A3045"},"dark":{"cal-brand":"#F8F5EB"}},"hideEventTypeDetails":false,"layout":"month_view"});
 </script>
-
-<!-- CAL TRIGGER ATTRIBUTES (reusable shorthand via JS) -->
+<!-- CAL TRIGGER ATTRIBUTES (applied to every .cal-btn after DOM loads) -->
 <script>
-  // Helper: apply Cal attributes to all .cal-btn elements after DOM loads
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.cal-btn').forEach(function(el) {
       el.setAttribute('data-cal-link', 'taren-gesell/30min');
@@ -554,26 +457,15 @@ Cal("init", "30min", {origin:"https://app.cal.com"});
   });
 </script>
 
-<!-- MOBILE NAV OVERLAY -->
-<div class="mobile-nav" id="mobileNav">
-  <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">✕</button>
-  <a href="#approach" onclick="document.getElementById('mobileNav').classList.remove('open')">Approach</a>
-  <a href="#spaces" onclick="document.getElementById('mobileNav').classList.remove('open')">Spaces</a>
-  <a href="#process" onclick="document.getElementById('mobileNav').classList.remove('open')">Process</a>
-  <a href="#about" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
-  <a href="#story" onclick="document.getElementById('mobileNav').classList.remove('open')">Our Group</a>
-  <a class="cal-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" style="color: var(--gold); cursor: pointer;">Book a Consultation</a>
-</div>
-
 <!-- HEADER -->
 <header>
   <div class="nav">
     <a href="#" class="logo" style="text-decoration:none;">
       <div style="text-align:center; font-family:'Playfair Display',Georgia,serif; line-height:1;">
         <div style="font-size:22px; font-weight:700; letter-spacing:0.18em; color:#1A3045; text-transform:uppercase; line-height:1;">WINNIPEG</div>
-        <div style="font-size:14.5px; font-weight:400; letter-spacing:0.28em; color:#2A3B4C; text-transform:uppercase; line-height:1; margin-top:3px;">STORAGE SPECIALISTS</div>
+        <div style="font-size:14.5px; font-weight:400; letter-spacing:0.28em; color:#2A3B4C; text-transform:uppercase; line-height:1; margin-top:3px;">EGRESS EXPERTS</div>
         <div style="margin-top:7px;">
-          <svg width="260" height="16" viewBox="0 0 260 16" xmlns="http://www.w3.org/2000/svg">
+          <svg width="210" height="16" viewBox="0 0 210 16" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stop-color="#5A4020" stop-opacity="0"/>
@@ -583,415 +475,421 @@ Cal("init", "30min", {origin:"https://app.cal.com"});
                 <stop offset="100%" stop-color="#5A4020" stop-opacity="0"/>
               </linearGradient>
             </defs>
-            <rect x="0" y="7.4" width="260" height="1.2" fill="url(#hg)"/>
+            <rect x="0" y="7.4" width="210" height="1.2" fill="url(#hg)"/>
             <polygon points="2,8 11,4.5 11,11.5" fill="#B89050"/>
-            <polygon points="258,8 249,4.5 249,11.5" fill="#B89050"/>
-            <rect x="56" y="4.3" width="7.4" height="7.4" fill="#C9A045" transform="rotate(45 59.7 8)"/>
-            <rect x="125" y="4.3" width="7.4" height="7.4" fill="#DDB055" transform="rotate(45 128.7 8)"/>
-            <rect x="194" y="4.3" width="7.4" height="7.4" fill="#C9A045" transform="rotate(45 197.7 8)"/>
+            <polygon points="208,8 199,4.5 199,11.5" fill="#B89050"/>
+            <rect x="44.6" y="4.3" width="7.4" height="7.4" fill="#C9A045" transform="rotate(45 48.3 8)"/>
+            <rect x="100.3" y="4.3" width="7.4" height="7.4" fill="#DDB055" transform="rotate(45 104 8)"/>
+            <rect x="155.9" y="4.3" width="7.4" height="7.4" fill="#C9A045" transform="rotate(45 159.6 8)"/>
           </svg>
         </div>
       </div>
     </a>
     <nav>
       <ul>
-        <li><a href="#approach">Approach</a></li>
-        <li><a href="#spaces">Spaces</a></li>
+        <li><a href="#outcomes">What You Get</a></li>
+        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#process">Process</a></li>
+        <li><a href="#team">Team</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#story">Our Group</a></li>
-        <li><a class="btn btn-gold cal-btn" style="padding: 12px 22px; cursor: pointer;">Consultation</a></li>
+        <li><a class="btn btn-gold cal-btn" style="padding: 12px 24px; cursor: pointer;">Book a Call</a></li>
       </ul>
     </nav>
-    <button class="nav-toggle" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Open menu">
-      <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
-<!-- HERO, Photo background -->
+<!-- MOBILE NAV OVERLAY -->
+<div class="mobile-nav">
+  <a href="#outcomes">What You Get</a>
+  <a href="#benefits">Why Egress</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#process">Process</a>
+  <a href="#team">Team</a>
+  <a href="#about">About</a>
+  <a class="btn btn-gold cal-btn" style="cursor: pointer;">Book a Call</a>
+</div>
+
+<!-- HERO (background photo set in CSS via .hero { background: url('header-image.jpg') ... }) -->
 <section class="hero">
   <div class="container">
     <div class="hero-grid">
       <div>
-        <div class="hero-eyebrow">End-to-End Home Storage Transformations</div>
-        <h1>Lifestyles change. <em>Your storage should too.</em></h1>
-        <div class="hero-ornament" style="justify-content: center;">
-          <div class="hero-ornament-line"></div>
-          <div class="hero-ornament-diamond"></div>
-          <div class="hero-ornament-line"></div>
-        </div>
-        <p class="lead">Your home was built for a way of life that's already moved on. The pantry was sized before the espresso machine. The closet was framed before two-career mornings. The mudroom never accounted for the gear, the dog, or the kids. We <em style="color: var(--gold-bright); font-style: italic;">re-store</em> your home, redesigning rooms, moving walls, reframing closets, relighting, and building bespoke millwork, so that storage finally matches the way you actually live.</p>
+        <div class="hero-eyebrow">Winnipeg's full-service egress window installer</div>
+        <h1>Make your basement a place you actually want to be.</h1>
+        <p class="lead">Most Winnipeg basements sit dark and half-used. We turn them into bright, code-compliant rooms — engineering, permits, the window, and full wall finishing handled by one crew, end to end.</p>
         <div class="hero-cta">
-          <a class="btn btn-gold cal-btn" style="cursor: pointer;">Book a Consultation</a>
-          <a href="#approach" class="btn btn-outline-light">How We Work</a>
+          <a class="btn btn-gold cal-btn" style="cursor: pointer;">Book a Call</a>
+          <a href="#process" class="btn btn-outline-cream">Our Process</a>
         </div>
       </div>
       <div class="hero-card">
-        <div class="hero-card-eyebrow">30-Minute Introductory Call</div>
-        <h3>Begin the design conversation</h3>
-        <p class="muted">A private virtual call to walk through your space, understand what isn't working, and explore what's possible. No pressure, no obligation.</p>
-        <div class="cal-trigger-block">
-          <p>✦ &nbsp;Available mornings &amp; afternoons, Mon–Fri<br>✦ &nbsp;Virtual — join from anywhere in Winnipeg<br>✦ &nbsp;Automated reminders sent to your inbox</p>
-          <button class="btn btn-cream cal-btn" style="cursor: pointer;">Choose a Time That Works →</button>
+        <div class="hero-card-eyebrow">Free Consultation</div>
+        <h3>Book an online call</h3>
+        <p class="muted">A quick virtual call to walk through your basement, answer your questions, and explore what's possible. No pressure, no obligation.</p>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <p style="color: var(--charcoal); opacity: 0.78; font-size: 0.85rem; line-height: 1.8; margin: 0;">✦&nbsp; A clear sense of your exact costs<br>✦&nbsp; Straight answers to your questions — no obligation<br>✦&nbsp; A real plan for your basement, in just 30 minutes</p>
+          <button class="btn btn-primary cal-btn" style="cursor: pointer; width: 100%;">Choose a Time That Works →</button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TRUST STRIP -->
-<div class="trust-strip">
-  <div class="container">
-    <div class="trust-strip-inner">
-      <div class="trust-item"><div class="trust-item-mark"></div>Walk-in Closets</div>
-      <div class="trust-item"><div class="trust-item-mark"></div>Entryway Storage</div>
-      <div class="trust-item"><div class="trust-item-mark"></div>Broom Closets</div>
-      <div class="trust-item"><div class="trust-item-mark"></div>Laundry Rooms</div>
-      <div class="trust-item"><div class="trust-item-mark"></div>Mud Rooms</div>
-      <div class="trust-item"><div class="trust-item-mark"></div>Kitchen Pantries</div>
-      <div class="trust-item"><div class="trust-item-mark"></div>And More</div>
-    </div>
-  </div>
-</div>
-
-<!-- BENEFITS -->
-<section id="approach" class="section-paper">
+<!-- OUTCOMES GRID (replaces trust strip) -->
+<section id="outcomes" class="section-cream">
   <div class="container">
     <div class="section-header">
-      <span class="eyebrow">Why Restore</span>
-      <h2>Storage built around your life. <em>Not your home's old layout.</em></h2>
+      <span class="eyebrow">What You Get</span>
+      <h2>One window. A whole new floor of your home.</h2>
       <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
-      <p>Wire shelving doesn't change a thing. Cabinetry alone, even expensive custom cabinetry, only adapts to the rooms you already have. We do the only thing that actually matches storage to modern life: we re-store the rooms themselves. Walls, framing, lighting, mechanical, drywall, flooring, and bespoke millwork, handled end-to-end, by one firm.</p>
+      <p>The same dark basement can become any of these. Here's what homeowners do with the space once the light comes in.</p>
+    </div>
+    <div class="outcomes-grid">
+      <div class="outcome-card tall">
+        <div class="photo-slot" role="img" aria-label="Bright finished basement bedroom with a large egress window">
+          <!-- Replace with: <img class="photo-img" src="images/legal-bedroom.jpg" alt="Bright basement bedroom with egress window"> -->
+          <span class="photo-slot-tag">PHOTO: bright basement bedroom, big egress window, made bed, daylight</span>
+        </div>
+        <div class="outcome-caption">
+          <span class="oc-tag">Outcome 01</span>
+          <h3>A legal bedroom</h3>
+          <p>Sized to code, it officially counts — for guests, kids, or a rental suite.</p>
+        </div>
+      </div>
+      <div class="outcome-card">
+        <div class="photo-slot" role="img" aria-label="Basement home office with natural light">
+          <!-- Replace with: <img class="photo-img" src="images/basement-office.jpg" alt="Basement home office"> -->
+          <span class="photo-slot-tag">PHOTO: basement home office, desk by window, daylight</span>
+        </div>
+        <div class="outcome-caption">
+          <span class="oc-tag">Outcome 02</span>
+          <h3>A real home office</h3>
+          <p>Daylight and a code-compliant exit — not a dim corner.</p>
+        </div>
+      </div>
+      <div class="outcome-card">
+        <div class="photo-slot" role="img" aria-label="Self-contained basement suite kitchenette">
+          <!-- Replace with: <img class="photo-img" src="images/income-suite.jpg" alt="Basement income suite"> -->
+          <span class="photo-slot-tag">PHOTO: self-contained suite / kitchenette area</span>
+        </div>
+        <div class="outcome-caption">
+          <span class="oc-tag">Outcome 03</span>
+          <h3>An income suite</h3>
+          <p>A legal, rentable lower level that pays you back.</p>
+        </div>
+      </div>
+      <div class="outcome-card wide">
+        <div class="photo-slot" role="img" aria-label="Before and after of a basement wall, dark versus bright">
+          <!-- Replace with: <img class="photo-img" src="images/before-after.jpg" alt="Before and after basement"> -->
+          <span class="photo-slot-tag">PHOTO: before/after — dark wall vs. finished wall with bright egress window</span>
+        </div>
+        <div class="outcome-caption">
+          <span class="oc-tag">Outcome 04</span>
+          <h3>The difference light makes</h3>
+          <p>Same room, transformed. When we leave, the wall looks like it was always meant to be there.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS (condensed to 4) -->
+<section id="benefits" class="section-light">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Why an egress window</span>
+      <h2>Reclaim the half of your home you've been ignoring.</h2>
+      <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
+      <p>A properly engineered egress window does more than meet code — it changes how the whole floor feels, functions, and appraises.</p>
     </div>
     <div class="benefits-grid">
       <div class="benefit-card">
         <div class="benefit-num">01</div>
-        <h3>End-to-end re-storage</h3>
-        <p>Designer, engineer, permits, framer, electrician, plumber, drywaller, painter, millworker, all under one firm with one project manager and one accountable team. Not a cabinet vendor with sub-trades on speed dial.</p>
+        <h3>Natural light changes everything</h3>
+        <p>Real daylight transforms how a basement feels. No more "going down to the dungeon" — just a brighter, healthier place to spend time.</p>
       </div>
       <div class="benefit-card">
         <div class="benefit-num">02</div>
-        <h3>The room itself, re-laid-out</h3>
-        <p>Walls move. Closets relocate. Rooms change size. A pantry pushes into a wasted hallway. A mudroom expands into a forgotten corner. We change <em>where</em> storage lives, not just what's inside it.</p>
+        <h3>Add a legal bedroom</h3>
+        <p>A code-compliant egress window makes a basement room officially count as a bedroom — opening up rentals, guest suites, and room for a growing family.</p>
       </div>
       <div class="benefit-card">
         <div class="benefit-num">03</div>
-        <h3>Designed by a designer</h3>
-        <p>Every project starts with a real designer: measurements, drawings, materials, lighting, hardware, finish schedule. Not a kitchen-store consultant pointing at a stock catalog.</p>
+        <h3>A real lift in home value</h3>
+        <p>Legal bedrooms and finished basements are among the highest-ROI renovations on the Winnipeg market — and they appraise that way.</p>
       </div>
-      <div class="benefit-card">
+      <div class="benefit-card feature">
         <div class="benefit-num">04</div>
-        <h3>Bespoke millwork, not boxes</h3>
-        <p>Built to your appliances, your wardrobe, your gear, your routines. Every dimension and finish tailored. No standardized cabinet sizes. No "close enough." No filler panels hiding the gaps.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-num">05</div>
-        <h3>Engineered &amp; permitted</h3>
-        <p>Stamped drawings, City of Winnipeg permits, full inspections, all included. Winnipeg is increasingly enforcing tear-outs of unpermitted work. We protect you from that, every project.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-num">06</div>
-        <h3>Built to outlast you</h3>
-        <p>Heirloom-grade joinery, solid materials, finishes specified to age beautifully. Storage that doesn't sag, doesn't go out of style, and doesn't get torn out in ten years. The opposite of disposable.</p>
+        <h3>One firm does it all</h3>
+        <p>Engineering, permits, the window, concrete cutting, and full wall finishing — handled by a single crew with one point of contact. No coordinating sub-trades. No half-finished walls left behind.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMPARISON TABLE -->
-<section class="section-cream">
+<!-- PRICE TRANSPARENCY -->
+<section id="pricing" class="section-cream">
   <div class="container">
     <div class="section-header">
-      <span class="eyebrow">The Three Approaches</span>
-      <h2>Most homes get a shelving kit. Some get cabinetry. <em>You deserve a re-storage.</em></h2>
+      <span class="eyebrow">Honest Pricing</span>
+      <h2>Done once. Done right. Done for life.</h2>
       <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
-      <p>There are three ways to address storage in a home that no longer fits the way you live. Only one of them actually changes the home. Compare side by side.</p>
     </div>
-    <div class="compare-wrap">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th class="col-feature">
-              <span class="col-eyebrow">What's Included</span>
-              <span class="col-name">Capability</span>
-              <span class="col-sub">The full scope of what changes</span>
-            </th>
-            <th class="col-them">
-              <span class="col-eyebrow">Approach 1</span>
-              <span class="col-name">Wire Shelving<br>&amp; Closet Kits</span>
-              <span class="col-sub">Adds shelves. Changes nothing about the house.</span>
-            </th>
-            <th class="col-them2">
-              <span class="col-eyebrow">Approach 2</span>
-              <span class="col-name">Cabinetry Alone</span>
-              <span class="col-sub">IKEA → custom. Adapts to existing layout only.</span>
-            </th>
-            <th class="col-us">
-              <span class="col-eyebrow">Approach 3</span>
-              <span class="col-name">Winnipeg Storage Specialists</span>
-              <span class="col-sub">End-to-end re-storage. The room itself is rebuilt.</span>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td class="feature">Designer-led concept &amp; drawings</td><td class="them"><span class="mark no">✕</span></td><td class="them2"><span class="mark no">✕</span></td><td class="us"><span class="mark yes">✓</span></td></tr>
-          <tr><td class="feature">Custom millwork built to your home</td><td class="them"><span class="mark no">✕</span></td><td class="them2"><span class="mark yes">✓</span></td><td class="us"><span class="mark yes">✓</span></td></tr>
-          <tr><td class="feature">Walls moved &amp; rooms reshaped</td><td class="them"><span class="mark no">✕</span></td><td class="them2"><span class="mark no">✕</span></td><td class="us"><span class="mark yes">✓</span></td></tr>
-          <tr><td class="feature">Reframing &amp; structural changes</td><td class="them"><span class="mark no">✕</span></td><td class="them2"><span class="mark no">✕</span></td><td class="us"><span class="mark yes">✓</span></td></tr>
-          <tr><td class="feature">Closets relocated &amp; reoriented</td><td class="them"><span class="mark no">✕</span></td><td class="them2"><span class="mark no">✕</span></td><td class="us"><span class="mark yes">✓</span></td></tr>
-          <tr><td class="feature">New lighting design &amp; install</td><td class="them"><span class="mark no">✕</span></td><td class="them2"><span class="mark no">✕</span></td><td class="us"><span class="mark yes">✓</span></td></tr>
-          <tr><td class="feature">Mechanical &amp; electrical relocation</td><td class="them"><span class="mark no">✕</span></td><td class="them2"><span class="mark no">✕</span></td><td class="us"><span class="mark yes">✓</span></td></tr>
-          <tr><td class="feature">Drywall, flooring &amp; paint</td><td class="them"><span class="mark no">✕</span></td><td class="them2"><span class="mark no">✕</span></td><td class="us"><span class="mark yes">✓</span></td></tr>
-          <tr><td class="feature">Stamped engineering</td><td class="them"><span class="mark no">✕</span></td><td class="them2"><span class="mark no">✕</span></td><td class="us"><span class="mark yes">✓</span></td></tr>
-          <tr><td class="feature">City of Winnipeg permits &amp; inspections</td><td class="them"><span class="mark no">✕</span></td><td class="them2"><span class="mark no">✕</span></td><td class="us"><span class="mark yes">✓</span></td></tr>
-          <tr><td class="feature">One project manager, one accountable firm</td><td class="them"><span class="mark no">✕</span></td><td class="them2"><span class="mark no">✕</span></td><td class="us"><span class="mark yes">✓</span></td></tr>
-          <tr><td class="feature">Built for decades, not seasons</td><td class="them"><span class="mark no">✕</span></td><td class="them2"><span class="mark yes">✓</span></td><td class="us"><span class="mark yes">✓</span></td></tr>
-        </tbody>
-      </table>
-      <div class="compare-footnote">
-        Wire shelving and closet kits don't change your home. They decorate around its old bones. <strong>Cabinetry alone, whether IKEA or fully custom, only adapts to the layout you already have.</strong> A re-storage is the only approach that changes the rooms themselves so storage finally matches the way you actually live.
+    <div class="price-hero">
+      <div class="price-tag">
+        <span class="price-amount">$5,000–$8,000</span>
+        <span class="price-unit">per window, all in</span>
+      </div>
+      <p class="price-note">Final pricing depends on window size, foundation depth, and interior finishing required. Every quote is itemized — you'll know exactly what you're paying for before we pick up a tool.</p>
+    </div>
+
+    <!-- SPLIT IMAGE: rough/unpermitted vs. finished -->
+    <div class="price-split">
+      <div class="split-pane">
+        <span class="split-label bad">The cheap quote</span>
+        <div class="photo-slot" role="img" aria-label="Rough, unfinished egress installation with debris">
+          <!-- Replace with: <img class="photo-img" src="images/rough-install.jpg" alt="Rough unfinished egress install"> -->
+          <span class="photo-slot-tag">PHOTO: rough / unpermitted-looking install — open wall, dirt + concrete pile</span>
+        </div>
+      </div>
+      <div class="split-pane">
+        <span class="split-label good">Our finish</span>
+        <div class="photo-slot" role="img" aria-label="Finished, painted wall around a clean egress window">
+          <!-- Replace with: <img class="photo-img" src="images/finished-install.jpg" alt="Finished egress wall"> -->
+          <span class="photo-slot-tag">PHOTO: finished, painted wall — clean egress window, like new</span>
+        </div>
       </div>
     </div>
+
+    <div class="compare-table">
+      <div class="compare-row" style="display: contents;">
+        <div class="compare-cell compare-head empty"></div>
+        <div class="compare-cell compare-head us">
+          Winnipeg Egress Experts
+          <small>$5K–$8K per window</small>
+        </div>
+        <div class="compare-cell compare-head">
+          Typical Low-Cost Contractor
+          <small>$2K–$4K per window</small>
+        </div>
+      </div>
+      <div class="compare-row" style="display: contents;">
+        <div class="compare-cell compare-label">Structural engineered drawings</div>
+        <div class="compare-cell compare-yes">Stamped &amp; included</div>
+        <div class="compare-cell compare-no">Rarely provided</div>
+      </div>
+      <div class="compare-row" style="display: contents;">
+        <div class="compare-cell compare-label">City of Winnipeg permits</div>
+        <div class="compare-cell compare-yes">We pull every one</div>
+        <div class="compare-cell compare-no">Often skipped</div>
+      </div>
+      <div class="compare-row" style="display: contents;">
+        <div class="compare-cell compare-label">City inspections &amp; approval</div>
+        <div class="compare-cell compare-yes">Scheduled &amp; passed</div>
+        <div class="compare-cell compare-no">Left to homeowner</div>
+      </div>
+      <div class="compare-row" style="display: contents;">
+        <div class="compare-cell compare-label">Demolition debris removal</div>
+        <div class="compare-cell compare-yes">Hauled away by us</div>
+        <div class="compare-cell compare-no">Pile of dirt + concrete left behind</div>
+      </div>
+      <div class="compare-row" style="display: contents;">
+        <div class="compare-cell compare-label">Interior wall reconstruction</div>
+        <div class="compare-cell compare-yes">Framing, insulation, vapour barrier, drywall, paint</div>
+        <div class="compare-cell compare-no">Open demolished wall left for you</div>
+      </div>
+      <div class="compare-row" style="display: contents;">
+        <div class="compare-cell compare-label">Risk of city forcing rebuild</div>
+        <div class="compare-cell compare-yes">Eliminated — fully permitted</div>
+        <div class="compare-cell compare-no">Real, and at your expense</div>
+      </div>
+      <div class="compare-row" style="display: contents;">
+        <div class="compare-cell compare-label">Project management</div>
+        <div class="compare-cell compare-yes">One firm, one point of contact</div>
+        <div class="compare-cell compare-no">You coordinate the rest</div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 50px; max-width: 760px; margin-left: auto; margin-right: auto;">
+      <p style="color: var(--charcoal); font-style: italic; font-family: 'Playfair Display', serif; font-size: 1.15rem; line-height: 1.7;">"The cheap quote isn't a $3,000 window. It's a $3,000 down payment on a project you'll spend the next six months finishing yourself — if the city doesn't make you tear it out first."</p>
+    </div>
   </div>
 </section>
 
-<!-- SCOPE STRIP -->
-<section class="scope-strip">
-  <div class="container">
-    <div class="scope-header">
-      <span class="eyebrow">Our End-to-End Scope</span>
-      <h2>One firm. <em>Every trade.</em> Every detail.</h2>
-      <p>This is what makes a re-storage different from a carpentry job, a cabinet install, or a design consult. We handle every link in the chain, coordinated, sequenced, and accountable to one project manager.</p>
-    </div>
-    <div class="scope-chain">
-      <span class="scope-chip"><span class="scope-chip-num">01</span> Concept Design</span>
-      <span class="scope-chip"><span class="scope-chip-num">02</span> Space Planning</span>
-      <span class="scope-chip"><span class="scope-chip-num">03</span> Stamped Engineering</span>
-      <span class="scope-chip"><span class="scope-chip-num">04</span> Winnipeg Permits</span>
-      <span class="scope-chip"><span class="scope-chip-num">05</span> Demolition</span>
-      <span class="scope-chip"><span class="scope-chip-num">06</span> Framing &amp; Structure</span>
-      <span class="scope-chip"><span class="scope-chip-num">07</span> Electrical</span>
-      <span class="scope-chip"><span class="scope-chip-num">08</span> Plumbing &amp; Mechanical</span>
-      <span class="scope-chip"><span class="scope-chip-num">09</span> Lighting Design</span>
-      <span class="scope-chip"><span class="scope-chip-num">10</span> Drywall</span>
-      <span class="scope-chip"><span class="scope-chip-num">11</span> Flooring</span>
-      <span class="scope-chip"><span class="scope-chip-num">12</span> Painting &amp; Finish</span>
-      <span class="scope-chip"><span class="scope-chip-num">13</span> Bespoke Millwork</span>
-      <span class="scope-chip"><span class="scope-chip-num">14</span> Hardware &amp; Fixtures</span>
-      <span class="scope-chip"><span class="scope-chip-num">15</span> Final Inspection &amp; Hand-Off</span>
-    </div>
-    <div class="scope-tagline">From the first sketch to the final coat of paint: one accountable team.</div>
-  </div>
-</section>
-
-<!-- SPACES -->
-<section id="spaces" class="section-paper">
+<!-- PROCESS TIMELINE (5 phases) -->
+<section id="process" class="section-navy">
   <div class="container">
     <div class="section-header">
-      <span class="eyebrow">Spaces We Transform</span>
-      <h2>The rooms most homes get wrong.</h2>
+      <span class="eyebrow">Our End-to-End Process</span>
+      <h2>One firm. One quote. Every step.</h2>
       <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
-      <p>Storage is the part of the home that ages fastest, and almost no one re-engineers it. A custom transformation of even one of these rooms changes how the entire house feels.</p>
+      <p>Most contractors hand pieces of the project off. We don't. Five phases, one crew, start to finish.</p>
     </div>
-    <div class="spaces-grid" style="grid-template-columns: repeat(3, 1fr);">
-      <div class="space-card">
-        <div class="space-icon"><svg viewBox="0 0 64 64"><rect x="6" y="10" width="52" height="44"/><line x1="6" y1="22" x2="58" y2="22"/><line x1="20" y1="22" x2="20" y2="54"/><line x1="44" y1="22" x2="44" y2="54"/><line x1="20" y1="38" x2="44" y2="38"/></svg></div>
-        <h4>Walk-in Closets</h4>
-        <p>Built around your wardrobe, not a stock 24-inch hanging rod. Every shelf, drawer, and shoe niche tailored to your life.</p>
+    <div class="timeline">
+      <div class="phase">
+        <div class="phase-num">I</div>
+        <div>
+          <h4>Assessment &amp; Engineering</h4>
+          <p>On-site assessment, then a licensed engineer produces stamped drawings for your permit.</p>
+        </div>
       </div>
-      <div class="space-card">
-        <div class="space-icon"><svg viewBox="0 0 64 64"><rect x="6" y="14" width="52" height="40"/><line x1="6" y1="28" x2="58" y2="28"/><line x1="22" y1="28" x2="22" y2="54"/><line x1="42" y1="28" x2="42" y2="54"/><line x1="14" y1="14" x2="14" y2="6"/><line x1="32" y1="14" x2="32" y2="6"/><line x1="50" y1="14" x2="50" y2="6"/></svg></div>
-        <h4>Entryway Storage</h4>
-        <p>Coats, bags, keys, shoes: a proper entry sequence that handles the chaos of coming and going without sacrificing style.</p>
+      <div class="phase">
+        <div class="phase-num">II</div>
+        <div>
+          <h4>Permits</h4>
+          <p>We pull every required City of Winnipeg permit and file the paperwork on your behalf.</p>
+        </div>
       </div>
-      <div class="space-card">
-        <div class="space-icon"><svg viewBox="0 0 64 64"><rect x="10" y="6" width="44" height="52"/><line x1="10" y1="20" x2="54" y2="20"/><line x1="10" y1="34" x2="54" y2="34"/><line x1="10" y1="48" x2="54" y2="48"/><circle cx="44" cy="32" r="1.5" fill="currentColor"/></svg></div>
-        <h4>Broom Closets</h4>
-        <p>From cramped and chaotic to clean and functional. Every cleaning tool with a place, every inch of vertical space used.</p>
+      <div class="phase">
+        <div class="phase-num">III</div>
+        <div>
+          <h4>Installation</h4>
+          <p>Precision concrete cutting, a properly drained window well, and a watertight egress window.</p>
+        </div>
       </div>
-      <div class="space-card">
-        <div class="space-icon"><svg viewBox="0 0 64 64"><rect x="8" y="10" width="22" height="44"/><rect x="34" y="10" width="22" height="44"/><circle cx="19" cy="32" r="6"/><circle cx="45" cy="32" r="6"/><line x1="8" y1="22" x2="30" y2="22"/><line x1="34" y1="22" x2="56" y2="22"/></svg></div>
-        <h4>Laundry Rooms</h4>
-        <p>Folding counters, drying rods, hampers, ironing storage: designed around the way laundry actually moves through your week.</p>
+      <div class="phase">
+        <div class="phase-num">IV</div>
+        <div>
+          <h4>Finishing</h4>
+          <p>Framing, insulation, vapour barrier, drywall, and paint — blended into your existing wall.</p>
+        </div>
       </div>
-      <div class="space-card">
-        <div class="space-icon"><svg viewBox="0 0 64 64"><rect x="6" y="14" width="52" height="40"/><line x1="6" y1="28" x2="58" y2="28"/><line x1="22" y1="28" x2="22" y2="54"/><line x1="42" y1="28" x2="42" y2="54"/><line x1="14" y1="14" x2="14" y2="6"/><line x1="32" y1="14" x2="32" y2="6"/><line x1="50" y1="14" x2="50" y2="6"/></svg></div>
-        <h4>Mud Rooms</h4>
-        <p>Boots, bags, gear, mail: sequenced for how the family actually enters the house. Built-in benches, hooks, and hidden storage.</p>
+      <div class="phase">
+        <div class="phase-num">V</div>
+        <div>
+          <h4>Sign-Off</h4>
+          <p>City inspections passed, all debris hauled away, and a final walk-through. Then it's yours.</p>
+        </div>
       </div>
-      <div class="space-card">
-        <div class="space-icon"><svg viewBox="0 0 64 64"><rect x="8" y="8" width="48" height="48"/><line x1="32" y1="8" x2="32" y2="56"/><line x1="8" y1="22" x2="32" y2="22"/><line x1="8" y1="36" x2="32" y2="36"/><line x1="32" y1="22" x2="56" y2="22"/><line x1="32" y1="40" x2="56" y2="40"/></svg></div>
-        <h4>Kitchen Pantries</h4>
-        <p>Reorganized around your appliances, your morning, your real groceries. Every shelf and drawer built for how you actually cook.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="section-light">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">The Crew</span>
+      <h2>The people who'll be in your home.</h2>
+      <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
+      <p>One accountable team from first call to final coat — no rotating cast of strangers and sub-trades.</p>
+    </div>
+    <div class="team-grid">
+      <!-- TEAM CARD 1 — replace [Your Name] and the bio line -->
+      <div class="team-card">
+        <div class="team-photo">
+          <div class="photo-slot" role="img" aria-label="Founder headshot">
+            <!-- Replace with: <img class="photo-img" src="images/team-founder.jpg" alt="Founder"> -->
+            <span class="photo-slot-tag">PHOTO: founder headshot</span>
+          </div>
+        </div>
+        <div class="team-body">
+          <div class="team-role">Founder &amp; Project Lead</div>
+          <h3>[Your Name]</h3>
+          <p>[One line — e.g. three generations in the trades; runs every project from quote to hand-off.]</p>
+        </div>
+      </div>
+      <!-- TEAM CARD 2 -->
+      <div class="team-card">
+        <div class="team-photo">
+          <div class="photo-slot" role="img" aria-label="Framing and carpentry partner headshot">
+            <!-- Replace with: <img class="photo-img" src="images/team-carpentry.jpg" alt="Carpentry partner"> -->
+            <span class="photo-slot-tag">PHOTO: carpentry partner headshot</span>
+          </div>
+        </div>
+        <div class="team-body">
+          <div class="team-role">Framing &amp; Carpentry</div>
+          <h3>[Partner Name]</h3>
+          <p>[One line — e.g. handles framing, insulation, and finishing so the wall looks untouched.]</p>
+        </div>
+      </div>
+      <!-- TEAM CARD 3 -->
+      <div class="team-card">
+        <div class="team-photo">
+          <div class="photo-slot" role="img" aria-label="Mechanical partner headshot">
+            <!-- Replace with: <img class="photo-img" src="images/team-mechanical.jpg" alt="Mechanical partner"> -->
+            <span class="photo-slot-tag">PHOTO: mechanical partner headshot</span>
+          </div>
+        </div>
+        <div class="team-body">
+          <div class="team-role">Mechanical &amp; Systems</div>
+          <h3>[Partner Name]</h3>
+          <p>[One line — e.g. keeps HVAC, drainage, and systems right around the new opening.]</p>
+        </div>
+      </div>
+      <!-- TEAM CARD 4 — Dimitro's crew -->
+      <div class="team-card">
+        <div class="team-photo">
+          <div class="photo-slot" role="img" aria-label="Concrete and excavation lead headshot">
+            <!-- Replace with: <img class="photo-img" src="images/team-concrete.jpg" alt="Concrete and excavation lead"> -->
+            <span class="photo-slot-tag">PHOTO: concrete/excavation lead headshot</span>
+          </div>
+        </div>
+        <div class="team-body">
+          <div class="team-role">Concrete &amp; Excavation</div>
+          <h3>Dimitro &amp; Crew</h3>
+          <p>[One line — e.g. precision foundation cutting, excavation, and window wells with dust control.]</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section-light">
+<section id="about" class="section-cream">
   <div class="container">
     <div class="showcase">
-      <div class="showcase-img" style="overflow:hidden;">
-        <img src="pantry.png" alt="Custom corner pantry transformation" style="width:100%; height:100%; object-fit:cover; display:block;" />
+      <div class="showcase-img">
+        <div class="photo-slot" role="img" aria-label="Finished basement room with light flooding through an egress window">
+          <!-- Replace with: <img class="photo-img" src="images/about.jpg" alt="Finished basement with egress window"> -->
+          <span class="photo-slot-tag">PHOTO: team on site, or finished basement room with light flooding in</span>
+        </div>
       </div>
       <div>
         <span class="eyebrow">About Us</span>
-        <h2>The most personal renovation in your home, treated that way.</h2>
+        <h2>When we leave, you won't know we were there.</h2>
         <div class="ornament left"><div class="ornament-diamond"></div><div class="ornament-line long"></div></div>
-        <p>Pantries, closets, laundry rooms, mudrooms: these aren't "little projects." They're the rooms you touch every single day, and the ones that quietly determine how your home actually feels to live in.</p>
-        <p>We treat them with the rigour usually reserved for kitchens and primary suites: a designer, engineered drawings, full permitting, the right trades coordinated, custom millwork fabricated to your measurements, and a finish that ages beautifully. Done once. Done right. Done for the lifetime of the home.</p>
-        <ul>
-          <li>Bespoke design from a real designer, every project</li>
-          <li>Engineered drawings &amp; full City of Winnipeg permits</li>
-          <li>Every trade coordinated under one project manager</li>
-          <li>Custom millwork fabricated to your measurements</li>
-          <li>White-glove site protocol: protected floors, contained dust, hauled debris</li>
-          <li>Workmanship warranty in writing</li>
-        </ul>
-        <a class="btn btn-primary cal-btn" style="cursor: pointer;">Speak With A Designer</a>
+        <p>We started Winnipeg Egress Experts because too many homeowners were getting bounced between contractors — chasing engineers, calling the city, sweeping concrete dust for weeks. It shouldn't be this hard to add a window.</p>
+        <p>So we built one team that does it all. From first call to final coat of paint: one firm, one project manager, one quote, one warranty, one immaculate result.</p>
+        <a class="btn btn-primary cal-btn" style="cursor: pointer;">Speak With Our Team</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROTOCOL -->
-<section class="section-paper">
+<!-- GESELL BUILT (condensed) -->
+<section id="story" class="section-navy">
   <div class="container">
     <div class="section-header">
-      <span class="eyebrow">On-Site Protocol</span>
-      <h2>Your home, treated like the asset it is.</h2>
-      <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
-      <p>This is not a noisy demolition crew tracking through your house. Every project follows our site protocol, a sequenced, contained, professional process that protects the rest of your home while we transform one room.</p>
-    </div>
-    <div class="protocol">
-      <ol class="protocol-list">
-        <li><h4>Floor &amp; surface protection</h4><p>Adjacent floors, walls, and finishes are masked and protected before the first tool touches the site.</p></li>
-        <li><h4>Contained dust zones</h4><p>Plastic barriers, zipper doors, and HEPA-grade air scrubbers keep demolition dust isolated to the work area.</p></li>
-        <li><h4>Daily cleanup</h4><p>The site is left tidy at the end of every day. No piles of debris growing in the corner of your home.</p></li>
-        <li><h4>Sequenced phasing</h4><p>Loud, dusty, and disruptive work is sequenced into the shortest possible window so daily life keeps moving.</p></li>
-        <li><h4>Total debris removal</h4><p>Every cabinet, every offcut, every bag of dust is hauled away by us. We leave nothing behind for you to deal with.</p></li>
-        <li><h4>Single point of contact</h4><p>One project manager who answers your call, runs every trade, and owns the schedule from day one to walk-through.</p></li>
-      </ol>
-      <div style="overflow:hidden; box-shadow: var(--shadow-lg); position: relative;">
-        <img src="laundry.png" alt="Custom laundry room transformation by Winnipeg Storage Specialists" style="width:100%; height:100%; object-fit:cover; display:block; min-height: 480px;" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VALUE -->
-<section id="value" class="section-cream">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">What You're Paying For</span>
-      <h2>We are not the cheapest. <em>That is the point.</em></h2>
-      <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
-      <p>You will get cheaper quotes elsewhere. They will be for a different scope of work and a different standard of finish. Here is what is included, on every project, when you hire us.</p>
-    </div>
-    <div class="value-grid">
-      <div class="value-cell"><div class="value-num">— I —</div><h4>A real designer, on every project</h4><p>Concept drawings, materials selection, hardware, lighting, finish specifications. The designer stays involved through completion.</p></div>
-      <div class="value-cell"><div class="value-num">— II —</div><h4>Custom-built millwork</h4><p>Fabricated to your measurements, your appliances, your wardrobe. Not assembled from a catalog. Not approximated to fit.</p></div>
-      <div class="value-cell"><div class="value-num">— III —</div><h4>Stamped engineering &amp; full permits</h4><p>Every wall move, every load-bearing change, every mechanical relocation: engineered, drawn, and permitted by the City of Winnipeg.</p></div>
-      <div class="value-cell"><div class="value-num">— IV —</div><h4>Every trade, coordinated</h4><p>Framers, electricians, plumbers, drywallers, painters, flooring, finish carpenters, all under one project manager. You speak to one person.</p></div>
-      <div class="value-cell"><div class="value-num">— V —</div><h4>Full structural reframing</h4><p>Walls moved, openings reframed, mechanical relocated, drywall and flooring repaired and refinished. The room itself, redone.</p></div>
-      <div class="value-cell"><div class="value-num">— VI —</div><h4>White-glove site protocol</h4><p>Surface protection, contained dust zones, daily cleanup, total debris removal. Quiet, sequenced, respectful of the home.</p></div>
-      <div class="value-cell"><div class="value-num">— VII —</div><h4>Heirloom-grade finish</h4><p>Materials and joinery chosen to age beautifully and last decades. The opposite of disposable storage. Built to outlast you.</p></div>
-      <div class="value-cell"><div class="value-num">— VIII —</div><h4>Written workmanship warranty</h4><p>If something is not right, we come back. Our name is on the work — long after the final walk-through.</p></div>
-    </div>
-    <div class="value-quote">
-      <p>&ldquo;The cheapest quote you receive is for a different project than the one we're proposing. <strong>You'll see exactly why on the first day of design.</strong>&rdquo;</p>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section id="process" class="section-paper">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Our End-to-End Process</span>
-      <h2>One firm. One designer. Every step.</h2>
-      <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
-      <p>From the first design conversation to the final coat of paint, every step below is performed or coordinated by our team. You never chase a sub-trade. You never call the city. You never coordinate the schedule.</p>
-    </div>
-    <div class="process-grid">
-      <div class="process-step"><div class="process-num">— I —</div><h4>Design Consultation</h4><p>An on-site conversation about how you live, what isn't working, and what the space could become.</p></div>
-      <div class="process-step"><div class="process-num">— II —</div><h4>Measurement &amp; Assessment</h4><p>Full measurements, structural and mechanical assessment, and identification of every constraint before design begins.</p></div>
-      <div class="process-step"><div class="process-num">— III —</div><h4>Design Development</h4><p>Concept drawings, plan and elevation views, materials and finish board. Refined with you until it's exactly right.</p></div>
-      <div class="process-step"><div class="process-num">— IV —</div><h4>Structural Engineering</h4><p>A licensed engineer stamps every drawing — wall moves, openings, structural changes — for permit submission.</p></div>
-      <div class="process-step"><div class="process-num">— V —</div><h4>City Permits</h4><p>We pull every required City of Winnipeg permit and file the paperwork on your behalf.</p></div>
-      <div class="process-step"><div class="process-num">— VI —</div><h4>Demolition &amp; Reframing</h4><p>Contained, sequenced demolition. Walls moved, openings reframed, mechanical relocated. The room becomes the right shape.</p></div>
-      <div class="process-step"><div class="process-num">— VII —</div><h4>Drywall &amp; Surfaces</h4><p>New drywall, vapour barrier, flooring repair, paint preparation. The room is re-finished as if it always looked this way.</p></div>
-      <div class="process-step"><div class="process-num">— VIII —</div><h4>Custom Millwork Fabrication</h4><p>Every cabinet, drawer, shelf, and panel is built to your measurements — not pulled from a stock catalog.</p></div>
-      <div class="process-step"><div class="process-num">— IX —</div><h4>Installation &amp; Finishing</h4><p>Millwork installed, hardware fitted, paint completed, finish details perfected. Inspections passed and signed off.</p></div>
-      <div class="process-step"><div class="process-num">— X —</div><h4>Final Walk-Through</h4><p>You walk the room with us. Every detail confirmed. Every drawer, door, and finish demonstrated. Then the warranty begins.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- TRUST SIGNALS -->
-<section class="section-light" style="padding: 80px 0;">
-  <div class="container">
-    <div class="trust-signals">
-      <div class="trust-pill"><div class="trust-pill-icon">◆</div><div><strong>Licensed &amp; Insured</strong><span>WCB-covered on every job</span></div></div>
-      <div class="trust-pill"><div class="trust-pill-icon">◆</div><div><strong>Engineered &amp; Permitted</strong><span>Stamped drawings, every project</span></div></div>
-      <div class="trust-pill"><div class="trust-pill-icon">◆</div><div><strong>City Inspected</strong><span>We schedule, attend, and pass</span></div></div>
-      <div class="trust-pill"><div class="trust-pill-icon">◆</div><div><strong>Gesell Built Standard</strong><span>Three generations of Winnipeg trade</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- STORY / GESELL BUILT -->
-<section id="story" class="story-section">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Our Group</span>
-      <h2>Part of a quietly different group of builders.</h2>
+      <span class="eyebrow">Our Philosophy</span>
+      <h2>Renovation doesn't have to mean chaos.</h2>
       <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
     </div>
-    <div class="story-display">
-      <div class="nameplate">GESELL BUILT</div>
-      <div class="nameplate-sub">Group of Companies</div>
-      <div class="story-etymology">
-        From the family of words that mean <strong>to rebuild, to remake, to bring forward.</strong> Winnipeg Storage Specialists is the specialist firm in the Gesell Built group of companies that <em>re-stores</em> homes by redoing the storage itself, room by room, so the way you live is finally reflected in the way your home is built. Alongside our sister practice in egress windows and basement construction.
-      </div>
-    </div>
-    <div class="story-narrative">
-      <h2>Three generations of trades, <em>rebuilt</em> for a better client experience.</h2>
-      <p>Our founder has been on job sites since he was two, raised in the trades alongside three generations of his family in millwork, framing, and finishing. By his twenties he'd built one of Winnipeg's best-known millwork companies, and eventually sold it.</p>
-      <p>Then came years away, living in British Columbia and Alberta, working in <em>other industries</em>. He watched how those businesses organized projects and ran client experience: predictable schedules, clear communication, a process that made clients feel taken care of from the first call to the final hand-off.</p>
-      <p>He came back to Winnipeg with one conviction: <strong>custom residential construction does not have to come with chaos.</strong> Homeowners deserve the same organized, professional experience that other industries take for granted, applied to the most personal renovations of all.</p>
-      <p>That is the standard the Gesell Built group was founded on. And it is the standard you receive every time Winnipeg Storage Specialists pulls into your driveway.</p>
+    <div class="gesell">
+      <p>Gesell Built was founded on a single conviction: custom residential construction should feel as <em>organized and professional</em> as any other industry — predictable schedules, clear communication, and a process that makes homeowners feel taken care of from first call to final hand-off. We borrow the best methods from outside the trades and apply them to the most personal renovation of all: your home.</p>
+      <p class="group-line">Winnipeg Egress Experts is part of the <strong>Gesell Built</strong> group of companies.</p>
     </div>
     <div class="story-pillars">
-      <div class="pillar"><div class="pillar-num">— I —</div><div class="pillar-label">Born &amp; raised in Winnipeg</div></div>
-      <div class="pillar"><div class="pillar-num">— II —</div><div class="pillar-label">Three generations in the trades</div></div>
-      <div class="pillar"><div class="pillar-num">— III —</div><div class="pillar-label">Methods borrowed from outside the industry</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROMISE -->
-<section id="promise" class="section-paper">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Our Promise</span>
-      <h2>What you get, every project, in writing.</h2>
-      <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
-      <p>A new specialist firm with three generations of trade experience behind it. Here is the standard we hold every project to, without exception.</p>
-    </div>
-    <div class="promise-grid">
-      <div class="promise-card"><div class="promise-mark">01</div><h3>Designed by a designer.</h3><p>Every project starts with a real designer. Not a salesperson. Not a template. Drawings, materials, hardware, lighting: all curated for your home.</p></div>
-      <div class="promise-card"><div class="promise-mark">02</div><h3>Engineered &amp; permitted.</h3><p>Stamped drawings, City of Winnipeg permits, inspections — every time. We pull, schedule, attend, and pass them.</p></div>
-      <div class="promise-card"><div class="promise-mark">03</div><h3>One firm. Every trade.</h3><p>Designer through painter, all coordinated under one project manager. You speak to one person. We handle everything else.</p></div>
-      <div class="promise-card"><div class="promise-mark">04</div><h3>Workmanship warranty.</h3><p>Backed in writing. If something is not right, we come back. Our name is on the work for the long haul.</p></div>
+      <div class="pillar">
+        <div class="pillar-num">— I —</div>
+        <div class="pillar-label">Born &amp; raised in Winnipeg</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">— II —</div>
+        <div class="pillar-label">Three generations in the trades</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">— III —</div>
+        <div class="pillar-label">Methods borrowed from outside the industry</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="section-cream">
+<section class="section-light">
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">Common Questions</span>
@@ -999,14 +897,38 @@ Cal("init", "30min", {origin:"https://app.cal.com"});
       <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
     </div>
     <div class="faq">
-      <div class="faq-item"><div class="faq-question">Why are you so much more expensive than the cabinet store down the road?</div><div class="faq-answer"><div class="faq-answer-inner">Because we are not selling cabinets. We are redesigning the room itself, custom-building millwork to fit your life, handling engineering, permits, inspections, every trade, debris removal, and finish work, all under one firm. A cabinet store sells you a kit and an installer. We deliver a transformed room, end to end. The dollar amounts aren't comparable because the projects aren't comparable.</div></div></div>
-      <div class="faq-item"><div class="faq-question">Do I really need a permit for a pantry or closet?</div><div class="faq-answer"><div class="faq-answer-inner">If walls move, framing changes, mechanical relocates, or load-bearing structure is touched, you need a permit, an engineered drawing, and a City of Winnipeg inspection. Anything less is a future problem. Winnipeg is increasingly enforcing tear-outs of unpermitted work. We never put our clients in that position.</div></div></div>
-      <div class="faq-item"><div class="faq-question">What happens if a contractor skipped the permit on previous work?</div><div class="faq-answer"><div class="faq-answer-inner">It can become an expensive problem at any time, often during a future renovation, a sale, or an insurance claim. The city can require unpermitted work to be opened, re-engineered, and rebuilt. We can usually identify these issues during the initial assessment and quote a remediation alongside the new design.</div></div></div>
-      <div class="faq-item"><div class="faq-question">How long does a custom transformation take?</div><div class="faq-answer"><div class="faq-answer-inner">Design typically takes 3–6 weeks. Permitting adds 2–4 weeks. The on-site build is usually 2–6 weeks depending on scope. You receive a firm schedule before construction begins, and our project manager updates you weekly.</div></div></div>
-      <div class="faq-item"><div class="faq-question">How disruptive is the work to daily life?</div><div class="faq-answer"><div class="faq-answer-inner">Far less than a typical renovation. We protect adjacent surfaces, contain dust zones with HEPA-grade air scrubbers, sequence loud and dusty work into the tightest windows, clean daily, and haul every bit of debris off-site. Most clients tell us they were surprised at how normal the rest of the house remained.</div></div></div>
-      <div class="faq-item"><div class="faq-question">Do you handle every trade or do I need to hire others?</div><div class="faq-answer"><div class="faq-answer-inner">We handle every trade. Designer, engineer, framer, electrician, plumber, drywaller, painter, flooring, finish carpenter, millworker, all coordinated under one project manager. You speak to one person. You sign one contract. You receive one warranty.</div></div></div>
-      <div class="faq-item"><div class="faq-question">What if I only want to transform one space? Is that worth it?</div><div class="faq-answer"><div class="faq-answer-inner">Absolutely. Most clients start with one room and add more later. A single transformed pantry or closet often changes how the entire main floor functions, and how the home feels every morning.</div></div></div>
-      <div class="faq-item"><div class="faq-question">Do you offer a warranty?</div><div class="faq-answer"><div class="faq-answer-inner">Yes, written workmanship warranty from us, plus the manufacturer warranty on hardware and fixtures. If anything is not right, we come back.</div></div></div>
+      <div class="faq-item">
+        <div class="faq-question">Why is your price higher than other quotes I'm getting?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Because our quote is the whole project — engineering, permits, inspections, the window, concrete cutting, debris removal, framing, insulation, vapour barrier, drywall, and paint. Cheaper quotes are typically just the cut and the window. Add the rest yourself and the total usually exceeds ours.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">I already have a window that was put in without a permit — can you help?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes, and it's a common Winnipeg situation. We can assess an existing unpermitted egress window, bring in engineered drawings, and work with the city to get it properly permitted and inspected — or correct the install if it doesn't meet code. It's far cheaper to resolve now than to have it flagged during a home inspection or sale.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How long does the whole project take?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Most single-window projects take 5–7 working days from cut to final paint. We give you a firm schedule before we start.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do I need a permit for an egress window?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes — and we handle it. Cutting a foundation requires engineered drawings and a City of Winnipeg permit. We pull both, attend the inspections, and file the paperwork.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What happens if a contractor skips the permit?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">It can become an expensive problem. The city can require unpermitted work to be torn out, re-engineered, and rebuilt. It also shows up in home inspections and can derail a future sale. We don't take that risk — and we don't ask clients to.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Will my basement room count as a legal bedroom?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">When sized and installed to code, yes. That's a major reason people call us — a legal bedroom can significantly lift resale value and rental potential.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How much mess does this make?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Cutting concrete is dusty work, but we use dust control, drop sheets, and contained access points. We clean as we go, with a final clean before walk-through. We also haul every bit of concrete and dirt off-site — no piles left behind.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do you offer a warranty?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes — a written workmanship warranty from us, plus the manufacturer's warranty on the window. If anything isn't right, we come back.</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1014,41 +936,71 @@ Cal("init", "30min", {origin:"https://app.cal.com"});
 <!-- CTA BANNER -->
 <section class="cta-banner">
   <div class="container">
-    <span class="eyebrow">Begin The Conversation</span>
-    <h2>Ready for a home that <em>matches you</em>?</h2>
+    <span class="eyebrow">Begin Your Project</span>
+    <h2>Ready for a brighter <em>basement</em>?</h2>
     <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
-    <p>Book a free 30-minute introductory call. We'll walk through your space, listen to how you actually live, and explore what a transformation could look like. No pressure, no obligation.</p>
-    <a class="btn btn-gold cal-btn" style="cursor: pointer;">Book My Free 30-Minute Call</a>
+    <p>Book a free, no-pressure online call. We'll walk through your space, answer every question, and explore what's possible — all from wherever you are in Winnipeg.</p>
+    <a class="btn btn-gold cal-btn" style="cursor: pointer;">Book My Call</a>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section-paper">
+<section id="contact" class="section-cream">
   <div class="container">
     <div class="contact-grid">
       <div class="contact-info">
         <span class="eyebrow">Get In Touch</span>
-        <h2>Tell us about the room.</h2>
+        <h2>Let's talk about your basement.</h2>
         <div class="ornament left"><div class="ornament-diamond"></div><div class="ornament-line long"></div></div>
-        <p>Prefer to reach us directly? We're happy to hear from you by phone or email. Or book a 30-minute introductory call right now and we'll walk through your project together.</p>
-        <div class="contact-detail"><div class="contact-detail-icon">✆</div><div><strong>Call or Text</strong><span>(204) 555-0123</span></div></div>
-        <div class="contact-detail"><div class="contact-detail-icon">✉</div><div><strong>Email</strong><span>hello@winnipegstoragespecialists.ca</span></div></div>
-        <div class="contact-detail"><div class="contact-detail-icon">◆</div><div><strong>Service Area</strong><span>Winnipeg &amp; surrounding communities</span></div></div>
-        <div class="contact-detail"><div class="contact-detail-icon">◷</div><div><strong>Hours</strong><span>Mon–Fri 9am–5pm · Consultations by appointment</span></div></div>
+        <p>Prefer to reach us directly? We're happy to hear from you by phone or email. Or book a free online call right now and we'll walk through your project together.</p>
+        <div class="contact-photo">
+          <div class="photo-slot" role="img" aria-label="Bright finished basement room with natural light through an egress window">
+            <!-- Replace with: <img class="photo-img" src="images/contact.jpg" alt="Bright finished basement"> -->
+            <span class="photo-slot-tag">PHOTO: bright finished basement room, light through egress window, lifestyle-styled</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✆</div>
+          <div>
+            <strong>Call or Text</strong>
+            <span>(204) 555-0123</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉</div>
+          <div>
+            <strong>Email</strong>
+            <span>hello@winnipegegressexperts.ca</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">◆</div>
+          <div>
+            <strong>Service Area</strong>
+            <span>Winnipeg &amp; surrounding communities</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">◷</div>
+          <div>
+            <strong>Hours</strong>
+            <span>Mon–Fri 8am–6pm · Sat by appointment</span>
+          </div>
+        </div>
         <div style="margin-top: 32px;">
-          <a class="btn btn-primary cal-btn" style="cursor: pointer;">Book a 30-Minute Introductory Call</a>
+          <a class="btn btn-primary cal-btn" style="cursor: pointer;">Book an Online Call</a>
         </div>
       </div>
-      <div style="background: var(--cream-light); border: 1px solid var(--hairline); padding: 48px; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 24px;">
+      <div style="background: var(--cream-light); border: 1px solid rgba(212, 181, 127, 0.4); padding: 48px; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 24px;">
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--gold);"></div>
-        <div style="color: var(--gold-deep); font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase; font-weight: 600;">30-Minute Introductory Call</div>
-        <h3 style="color: var(--navy); font-size: 1.5rem; line-height: 1.3;">Begin the design<br>conversation</h3>
+        <div class="hero-card-eyebrow">Free Online Consultation</div>
+        <h3 style="color: var(--navy); font-size: 1.5rem; line-height: 1.3;">Book your call</h3>
         <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
-        <p style="color: var(--charcoal); font-size: 0.95rem; line-height: 1.75; max-width: 340px;">A private virtual call to walk through your space, understand what isn't working, and explore what's possible. Pick a time that works for you — automated reminders handle the rest.</p>
+        <p style="color: var(--charcoal); font-size: 0.95rem; line-height: 1.75; max-width: 340px;">A quick virtual call to walk through your basement, understand what isn't working, and explore what's possible. Pick a time that works for you — automated reminders handle the rest.</p>
         <ul style="list-style: none; text-align: left; width: 100%; max-width: 320px;">
-          <li style="padding: 10px 0 10px 26px; position: relative; color: var(--navy); font-size: 0.92rem; border-bottom: 1px solid var(--hairline);"><span style="position: absolute; left: 4px; color: var(--gold);">◆</span> Free, no obligation</li>
-          <li style="padding: 10px 0 10px 26px; position: relative; color: var(--navy); font-size: 0.92rem; border-bottom: 1px solid var(--hairline);"><span style="position: absolute; left: 4px; color: var(--gold);">◆</span> Virtual — join from anywhere</li>
-          <li style="padding: 10px 0 10px 26px; position: relative; color: var(--navy); font-size: 0.92rem; border-bottom: 1px solid var(--hairline);"><span style="position: absolute; left: 4px; color: var(--gold);">◆</span> Automated reminders sent to you</li>
+          <li style="padding: 10px 0 10px 26px; position: relative; color: var(--navy); font-size: 0.92rem; border-bottom: 1px solid rgba(212, 181, 127, 0.3);"><span style="position: absolute; left: 4px; color: var(--gold);">◆</span> Free, no obligation</li>
+          <li style="padding: 10px 0 10px 26px; position: relative; color: var(--navy); font-size: 0.92rem; border-bottom: 1px solid rgba(212, 181, 127, 0.3);"><span style="position: absolute; left: 4px; color: var(--gold);">◆</span> Virtual — join from anywhere in Winnipeg</li>
+          <li style="padding: 10px 0 10px 26px; position: relative; color: var(--navy); font-size: 0.92rem; border-bottom: 1px solid rgba(212, 181, 127, 0.3);"><span style="position: absolute; left: 4px; color: var(--gold);">◆</span> Automated reminders sent to you</li>
           <li style="padding: 10px 0 10px 26px; position: relative; color: var(--navy); font-size: 0.92rem;"><span style="position: absolute; left: 4px; color: var(--gold);">◆</span> Available Mon–Fri, mornings &amp; afternoons</li>
         </ul>
         <a class="btn btn-primary cal-btn" style="cursor: pointer; width: 100%; text-align: center;">Choose a Time →</a>
@@ -1062,52 +1014,28 @@ Cal("init", "30min", {origin:"https://app.cal.com"});
   <div class="container">
     <div class="footer-grid">
       <div class="footer-tag">
-        <a href="#" class="logo" style="text-decoration:none;">
-          <div style="text-align:left; font-family:'Playfair Display',Georgia,serif; line-height:1;">
-            <div style="font-size:20px; font-weight:700; letter-spacing:0.18em; color:#F0EBE0; text-transform:uppercase; line-height:1;">WINNIPEG</div>
-            <div style="font-size:13px; font-weight:400; letter-spacing:0.28em; color:#C8BFA8; text-transform:uppercase; line-height:1; margin-top:3px;">STORAGE SPECIALISTS</div>
-            <div style="margin-top:7px;">
-              <svg width="240" height="16" viewBox="0 0 240 16" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="fg" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#5A4020" stop-opacity="0"/>
-                    <stop offset="12%" stop-color="#C9A55A" stop-opacity="1"/>
-                    <stop offset="50%" stop-color="#F5E090" stop-opacity="1"/>
-                    <stop offset="88%" stop-color="#C9A55A" stop-opacity="1"/>
-                    <stop offset="100%" stop-color="#5A4020" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <rect x="0" y="7.4" width="240" height="1.2" fill="url(#fg)"/>
-                <polygon points="2,8 11,4.5 11,11.5" fill="#C9A55A"/>
-                <polygon points="238,8 229,4.5 229,11.5" fill="#C9A55A"/>
-                <rect x="50" y="4.3" width="7.4" height="7.4" fill="#D4B060" transform="rotate(45 53.7 8)"/>
-                <rect x="115" y="4.3" width="7.4" height="7.4" fill="#F0D880" transform="rotate(45 118.7 8)"/>
-                <rect x="180" y="4.3" width="7.4" height="7.4" fill="#D4B060" transform="rotate(45 183.7 8)"/>
-              </svg>
-            </div>
-          </div>
+        <a href="#" class="logo">
+          <span class="logo-name">Winnipeg Egress Experts</span>
+          <span class="logo-sub">ELEVATED CRAFT THROUGH STRUCTURE</span>
         </a>
-        <p>Custom storage transformations for Winnipeg homes. Designer-led, fully engineered, fully permitted, fully finished. The rooms you touch every day, treated with the rigour they deserve.</p>
+        <p>Brighter, safer, more valuable basements — one window at a time. Local crew. Fully permitted, inspected, and finished.</p>
       </div>
       <div>
-        <h4>Spaces</h4>
+        <h4>Services</h4>
         <ul>
-          <li><a href="#spaces">Corner Pantries</a></li>
-          <li><a href="#spaces">Walk-in Closets</a></li>
-          <li><a href="#spaces">Storage Closets</a></li>
-          <li><a href="#spaces">Laundry Rooms</a></li>
-          <li><a href="#spaces">Mudrooms</a></li>
-          <li><a href="#spaces">Built-Ins</a></li>
+          <li><a href="#process">Egress Windows</a></li>
+          <li><a href="#process">Concrete Cutting</a></li>
+          <li><a href="#process">Window Wells</a></li>
+          <li><a href="#process">Wall Finishing</a></li>
         </ul>
       </div>
       <div>
         <h4>Company</h4>
         <ul>
           <li><a href="#about">About Us</a></li>
-          <li><a href="#approach">Our Approach</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#story">Gesell Built Group</a></li>
-          <li><a href="#promise">Our Promise</a></li>
+          <li><a href="#story">Our Philosophy</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#pricing">Pricing</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -1115,28 +1043,38 @@ Cal("init", "30min", {origin:"https://app.cal.com"});
         <h4>Contact</h4>
         <ul>
           <li>(204) 555-0123</li>
-          <li>hello@winnipegstoragespecialists.ca</li>
+          <li>hello@winnipegegressexperts.ca</li>
           <li>Winnipeg, MB</li>
         </ul>
-        <div style="margin-top: 24px;">
-          <a class="cal-btn" style="color: var(--gold); font-size: 0.86rem; cursor: pointer; text-decoration: underline; text-underline-offset: 3px;">Book a Free Intro Call →</a>
-        </div>
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 Winnipeg Storage Specialists. Licensed &amp; Insured. All rights reserved.
-      <div class="footer-group">A Gesell Built group of companies firm.</div>
+      © 2026 Winnipeg Egress Experts. Licensed &amp; Insured. All rights reserved.
     </div>
   </div>
 </footer>
 
 <script>
+  // FAQ accordion
   document.querySelectorAll('.faq-question').forEach(q => {
     q.addEventListener('click', () => {
       const item = q.parentElement;
       const isOpen = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  navToggle.addEventListener('click', () => {
+    const open = document.body.classList.toggle('menu-open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.querySelectorAll('.mobile-nav a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.body.classList.remove('menu-open');
+      navToggle.setAttribute('aria-expanded', 'false');
     });
   });
 </script>
